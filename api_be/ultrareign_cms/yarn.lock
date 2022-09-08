@@ -9799,7 +9799,7 @@ strapi-utils@3.6.10:
     pluralize "^8.0.0"
     yup "^0.32.9"
 
-strapi@3.6.10:
+strapi@^3.6.10:
   version "3.6.10"
   resolved "https://registry.yarnpkg.com/strapi/-/strapi-3.6.10.tgz#b817a4d825af8339bd75af63955577fe9601eac0"
   integrity sha512-Rsp8d8FsJYQkYUMYoC1ONh3/CPhe4sODGloJbW7xhzq3shUgqR+36V4GJrlsT8KZ98O7gmACgHPKlC8+HSOFCg==
