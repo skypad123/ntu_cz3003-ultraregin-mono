@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "scores",
+  "info": {
+    "singularName": "score",
+    "pluralName": "scores",
+    "displayName": "Score",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "level": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::level.level"
+    },
+    "player": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "questions_attempted": {
+      "type": "integer"
+    },
+    "questions_correct": {
+      "type": "integer"
+    },
+    "assignment_score_composition": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::assignment-score-composition.assignment-score-composition",
+      "inversedBy": "scores"
+    }
+  }
+}
