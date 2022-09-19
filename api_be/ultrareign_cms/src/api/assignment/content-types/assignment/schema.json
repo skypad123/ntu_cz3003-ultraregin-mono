@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "assignments",
+  "info": {
+    "singularName": "assignment",
+    "pluralName": "assignments",
+    "displayName": "Assignment",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "world": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::world.world"
+    },
+    "student": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "level_completed": {
+      "type": "integer"
+    },
+    "assignment_score_composition": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::assignment-score-composition.assignment-score-composition",
+      "mappedBy": "assignment"
+    }
+  }
+}
