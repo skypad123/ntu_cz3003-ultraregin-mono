@@ -1,0 +1,52 @@
+/* The side navigation menu */
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+  }
+  
+  /* Sidebar links */
+  .sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  /* Active/current link */
+  .sidebar a.active {
+    background-color: #555;
+    color: white;
+  }
+  
+  /* Links on mouse-over */
+  .sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+  
+  /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+  div.container {
+    margin-left: 200px;
+    height:100px;
+    padding: 1px 16px;
+  }
+
+  .input-group-btn{
+    height:50px;
+    font-size:10px;
+    line-height:1.3333333;
+    border-radius:6px;
+    display:block;
+
+  }
+
+  .input-group-btn input
+  {
+    visibility: hidden;
+  }
+
