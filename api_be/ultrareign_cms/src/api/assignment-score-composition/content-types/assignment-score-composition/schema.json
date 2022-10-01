@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "assignment_score_compositions",
+  "info": {
+    "singularName": "assignment-score-composition",
+    "pluralName": "assignment-score-compositions",
+    "displayName": "Assignment Score Composition",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "assignment": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::assignment.assignment",
+      "inversedBy": "assignment_score_composition"
+    },
+    "scores": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::score.score",
+      "mappedBy": "assignment_score_composition"
+    }
+  }
+}
