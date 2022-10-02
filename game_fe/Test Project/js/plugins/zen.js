@@ -8,7 +8,7 @@
  * This plugin calls Strapi Rest API 
  * 
  * @command loginUser
- * @desc Sets username variableID.
+ * @desc Logins User.
  * 
  * @arg usernameID
  * @type number
@@ -21,6 +21,10 @@
  * @desc Sets password variableID.
  * @default 2
  * @decimals 0
+ * 
+ * @command getAssignments
+ * @desc getAssignments.
+ * 
  */
 
 (() => {
@@ -28,6 +32,7 @@
     var loginID = "";
     usernameID = 1;
     passwordID = 2;
+    returnID = 20;
 
     //
     const axios = require('axios').default;
@@ -93,9 +98,41 @@
       });
 
     }
+
+
+//=====================================================
+    //error 403 for some reason
+    getAssignments = function(){
+      console.log("getAssignments has been called");
+      console.log("Auth Header: "+'Bearer '+ $gameVariables.value(3));
+      axios.get('https://ultrareign-be-7mmq3.ondigitalocean.app/api/assignments', {
+      headers: {
+        Authorization:
+          'Bearer '+ $gameVariables.value(3),
+      },
+    }).then(response => {
+      console.log(response);
+      getResponse();
+      return response.data;
+    }).catch(error => {
+      console.log('An error occurred:', error.response);
+      loginID = "";
+      $gameVariables.setValue(4,error.response.status);
+      getResponse();
+    });
+
+    }
+
+
+//=====================================================
     PluginManager.registerCommand("zen", "loginUser", () => {
         loginUser($gameVariables.value(usernameID), $gameVariables.value(passwordID));
         
     });
+
+    PluginManager.registerCommand("zen", "getAssignments", () => {
+      getAssignments();
+      
+  });
 
 })();
