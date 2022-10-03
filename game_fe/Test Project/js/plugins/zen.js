@@ -25,6 +25,27 @@
  * @command getAssignments
  * @desc getAssignments.
  * 
+ * @command getAssignmentScoreComposition
+ * @desc getAssignmentScoreComposition.
+ * 
+ * @command getLevels
+ * @desc getLevels.
+ *
+ * @command getLevelQuestionComposition
+ * @desc getLevelQuestionComposition.
+ * 
+ * @command getQuestion
+ * @desc getQuestion.
+ * 
+ * @command getUser
+ * @desc getUser.
+ * 
+ * @command getWorld
+ * @desc getWorld.
+ * 
+ * @command getWorldQuestionComposition
+ * @desc getWorldQuestionComposition.
+ * 
  */
 
 (() => {
@@ -33,7 +54,7 @@
     usernameID = 1;
     passwordID = 2;
     returnID = 20;
-
+    bearer_token = "970b635e2c091a14bec6c5035e75577a6d2ade6e67c10f118e0ab4a880eb941297850b921e24723197effddef172a60f8e669ac6aeaf573ad57a4aa6dfcc4ac6965f3781053eb1fe06e2e8f19ad8bc01c470cceb3afd6fb2525dcbfbaa4bb16369357f78ae1bb750f04f5a30ec08986a4a88bebe2e01d861ba12a78ab1edb9a5";
     //
     const axios = require('axios').default;
 
@@ -87,38 +108,168 @@
         loginID = response.data.jwt;
         $gameVariables.setValue(3,loginID);
         $gameVariables.setValue(4,response.status);
-        getResponse();
         return response.data.jwt;
       }).catch(error => {
         console.log('An error occurred:', error.response);
         loginID = "";
         $gameVariables.setValue(3,loginID);
         $gameVariables.setValue(4,error.response.status);
-        getResponse();
       });
 
     }
 
 
 //=====================================================
-    //error 403 for some reason
     getAssignments = function(){
+      
       console.log("getAssignments has been called");
-      console.log("Auth Header: "+'Bearer '+ $gameVariables.value(3));
+      console.log("Auth Header: "+'Bearer '+ bearer_token);
       axios.get('https://ultrareign-be-7mmq3.ondigitalocean.app/api/assignments', {
       headers: {
         Authorization:
-          'Bearer '+ $gameVariables.value(3),
+          'Bearer '+ bearer_token,
       },
     }).then(response => {
       console.log(response);
-      getResponse();
       return response.data;
     }).catch(error => {
       console.log('An error occurred:', error.response);
       loginID = "";
       $gameVariables.setValue(4,error.response.status);
-      getResponse();
+    });
+
+    }
+
+    getAssignmentScoreComposition = function(){
+      
+      console.log("getAssignmentScoreComposition has been called");
+      console.log("Auth Header: "+'Bearer '+ bearer_token);
+      axios.get('https://ultrareign-be-7mmq3.ondigitalocean.app/api/assignment-score-compositions', {
+      headers: {
+        Authorization:
+          'Bearer '+ bearer_token,
+      },
+    }).then(response => {
+      console.log(response);
+      return response.data;
+    }).catch(error => {
+      console.log('An error occurred:', error.response);
+      loginID = "";
+      $gameVariables.setValue(4,error.response.status);
+    });
+
+    }
+
+
+    getLevels = function(){   
+      console.log("getLevels has been called");
+      console.log("Auth Header: "+'Bearer '+ bearer_token);
+      axios.get('https://ultrareign-be-7mmq3.ondigitalocean.app/api/levels', {
+      headers: {
+        Authorization:
+          'Bearer '+ bearer_token,
+      },
+    }).then(response => {
+      console.log(response);
+      return response.data;
+    }).catch(error => {
+      console.log('An error occurred:', error.response);
+      loginID = "";
+      $gameVariables.setValue(4,error.response.status);
+    });
+
+    }
+
+    getLevelQuestionComposition = function(){   
+      console.log("getLevelQuestionComposition has been called");
+      console.log("Auth Header: "+'Bearer '+ bearer_token);
+      axios.get('https://ultrareign-be-7mmq3.ondigitalocean.app/api/level-question-compositions', {
+      headers: {
+        Authorization:
+          'Bearer '+ bearer_token,
+      },
+    }).then(response => {
+      console.log(response);
+      return response.data;
+    }).catch(error => {
+      console.log('An error occurred:', error.response);
+      loginID = "";
+      $gameVariables.setValue(4,error.response.status);
+    });
+
+    }
+
+    getQuestion = function(){   
+      console.log("getQuestion has been called");
+      console.log("Auth Header: "+'Bearer '+ bearer_token);
+      axios.get('https://ultrareign-be-7mmq3.ondigitalocean.app/api/questions', {
+      headers: {
+        Authorization:
+          'Bearer '+ bearer_token,
+      },
+    }).then(response => {
+      console.log(response);
+      return response.data;
+    }).catch(error => {
+      console.log('An error occurred:', error.response);
+      loginID = "";
+      $gameVariables.setValue(4,error.response.status);
+    });
+
+    }
+
+    getUser = function(){   
+      console.log("getUser has been called");
+      console.log("Auth Header: "+'Bearer '+ bearer_token);
+      axios.get('https://ultrareign-be-7mmq3.ondigitalocean.app/api/users', {
+      headers: {
+        Authorization:
+          'Bearer '+ bearer_token,
+      },
+    }).then(response => {
+      console.log(response);
+      return response.data;
+    }).catch(error => {
+      console.log('An error occurred:', error.response);
+      loginID = "";
+      $gameVariables.setValue(4,error.response.status);
+    });
+
+    }
+    getWorld = function(){   
+      console.log("getWorld has been called");
+      console.log("Auth Header: "+'Bearer '+ bearer_token);
+      axios.get('https://ultrareign-be-7mmq3.ondigitalocean.app/api/worlds', {
+      headers: {
+        Authorization:
+          'Bearer '+ bearer_token,
+      },
+    }).then(response => {
+      console.log(response);
+      return response.data;
+    }).catch(error => {
+      console.log('An error occurred:', error.response);
+      loginID = "";
+      $gameVariables.setValue(4,error.response.status);
+    });
+
+    }
+
+    getWorldQuestionComposition = function(){   
+      console.log("getWorld has been called");
+      console.log("Auth Header: "+'Bearer '+ bearer_token);
+      axios.get('https://ultrareign-be-7mmq3.ondigitalocean.app/api/world-question-compositions', {
+      headers: {
+        Authorization:
+          'Bearer '+ bearer_token,
+      },
+    }).then(response => {
+      console.log(response);
+      return response.data;
+    }).catch(error => {
+      console.log('An error occurred:', error.response);
+      loginID = "";
+      $gameVariables.setValue(4,error.response.status);
     });
 
     }
@@ -133,6 +284,42 @@
     PluginManager.registerCommand("zen", "getAssignments", () => {
       getAssignments();
       
-  });
+    });
+
+    PluginManager.registerCommand("zen", "getAssignmentScoreComposition", () => {
+      getAssignmentScoreComposition();
+      
+    });
+
+    PluginManager.registerCommand("zen", "getLevels", () => {
+      getLevels();
+    
+    });
+
+    PluginManager.registerCommand("zen", "getLevelQuestionComposition", () => {
+      getLevelQuestionComposition();
+      
+    });
+
+    PluginManager.registerCommand("zen", "getQuestion", () => {
+      getQuestion();
+      
+    });
+
+    PluginManager.registerCommand("zen", "getUser", () => {
+      getUser();
+      
+    });
+
+    PluginManager.registerCommand("zen", "getWorld", () => {
+      getWorld();
+      
+    });
+
+    PluginManager.registerCommand("zen", "getWorldQuestionComposition", () => {
+      getWorldQuestionComposition();
+      
+    });
+
 
 })();
