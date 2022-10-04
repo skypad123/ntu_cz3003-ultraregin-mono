@@ -8,6 +8,7 @@ class NavBar extends HTMLElement {
         
 
         <div class="sidebar">
+            <img src="img/sidebar-logo.jpg" style="width:180px">
             <a class="nav-link" id="nav-index" href="summary-report.html">Summary Report</a>
             <a class="nav-link" id="nav-workouts" href="create-question.html">Create</a>
             <a class="nav-link" id="nav-exercises" href="read-question.html">Read</a>
