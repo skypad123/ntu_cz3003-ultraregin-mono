@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     width: 200px;
-    background-color: #f1f1f1;
+    background-color: #d9d9d9;
     position: fixed;
     height: 100%;
     overflow: auto;
@@ -16,6 +16,7 @@
     padding: 16px;
     text-decoration: none;
   }
+  
   
   /* Active/current link */
   .sidebar a.active {
@@ -34,10 +35,58 @@
     margin-left: 200px;
     height:100px;
     padding: 1px 16px;
+    
+  }
+
+  div.container-login {
+    /* margin-left: 200px; */
+    height:100px;
+    padding: 1px 16px;
+    
+  }
+
+  .img-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn-primary {
+    background-color: #285474;
+    border-color: #285474;
+    color: white;
+  }
+
+  .btn {
+    background-color: #285474;
+    border-color: #285474;
+    color: white;
+  }
+
+  .btn:hover{
+    opacity:90%;
+    color:white;
+  }
+  
+  .btn-secondary {
+    background-color: #285474;
+    border-color: #285474;
+    color: white;
+    width:200px;
+  }
+
+  .btn-secondary:hover {
+    opacity: 90%;
+  }
+
+  .bottom-btns{
+    display:flex;
+    justify-content: space-between;
+    padding: 15px;
   }
 
   .input-group-btn{
-    height:50px;
+    height:40px;
     font-size:10px;
     line-height:1.3333333;
     border-radius:6px;
@@ -48,5 +97,20 @@
   .input-group-btn input
   {
     visibility: hidden;
+  }
+
+  /* .world-level-play{
+    background-color: beige;
+    display: flex;
+    justify-content: center;
+  } */
+  
+  .student-details{
+    border-radius: 15px; 
+    border-style: solid; 
+    border-color: #285474;
+    margin-top: 20px;
+    display: flex;
+    text-align: center;
   }
 
