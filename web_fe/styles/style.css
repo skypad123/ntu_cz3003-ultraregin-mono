@@ -57,8 +57,36 @@
     color: white;
   }
 
+  .btn {
+    background-color: #285474;
+    border-color: #285474;
+    color: white;
+  }
+
+  .btn:hover{
+    opacity:90%;
+    color:white;
+  }
+  
+  .btn-secondary {
+    background-color: #285474;
+    border-color: #285474;
+    color: white;
+    width:200px;
+  }
+
+  .btn-secondary:hover {
+    opacity: 90%;
+  }
+
+  .bottom-btns{
+    display:flex;
+    justify-content: space-between;
+    padding: 15px;
+  }
+
   .input-group-btn{
-    height:50px;
+    height:40px;
     font-size:10px;
     line-height:1.3333333;
     border-radius:6px;
@@ -69,5 +97,20 @@
   .input-group-btn input
   {
     visibility: hidden;
+  }
+
+  /* .world-level-play{
+    background-color: beige;
+    display: flex;
+    justify-content: center;
+  } */
+  
+  .student-details{
+    border-radius: 15px; 
+    border-style: solid; 
+    border-color: #285474;
+    margin-top: 20px;
+    display: flex;
+    text-align: center;
   }
 

@@ -11,54 +11,52 @@
     <script src="scripts/navbar.js" type="text/javascript" defer></script>
 </head>
     <body>
-        <navbar-el></navbar-el>
+        <navbar-professor></navbar-professor>
 
         <div class="container">
             <div class="row">
-                <div class="col-lg">
-                    <h3 class="mt-3">Assign Question:</h3>
-                </div>
+                <h3 class="mt-3">Assign Question</h3>
+                <h5 class="ml-5" style="color:#285474;">Choose a student to assign a question to</h5>
             </div>
 
-        <form class="row g-3" id="form-question">
-            
-            <p>Choose a student to assign a question to:</p>
+        <div class="card mt-0 border-0">
+            <article class="card-body">
+                <form class="col" id="form-question">
+                    <div class="row">
+                        <label for="inputName" class="form-label">Class:</label>
+                        <div class="input-group-btn" data-toggle="buttons">
+                            <label class="btn btn-primary">
+                            <input type="radio" name="class" id="classA" autocomplete="off" checked>A
+                            </label>
+                            <label class="btn btn-primary">
+                            <input type="radio" name="class" id="classB" autocomplete="off">B
+                            </label>
+                            <label class="btn btn-primary">
+                            <input type="radio" name="class" id="classC" autocomplete="off">C
+                            </label>
+                        </div>
+                    </div>
 
-            <div class="col-lg-6 ">
-                <label for="inputName" class="form-label">World:</label>
-                <input type="radio" id="contactChoice1"
-                 name="contact" value="email">
-                <label for="contactChoice1">A</label>
-          
-                <input type="radio" id="contactChoice2"
-                 name="contact" value="phone">
-                <label for="contactChoice2">B</label>
-          
-                <input type="radio" id="contactChoice3"
-                 name="contact" value="mail">
-                <label for="contactChoice3">C</label>
-            </div>
+                    <div class="row">
+                        <label for="inputStudent" class="form-label">Student:</label>
+                        <select class="form-select" name="studentName">
+                            <option value="" disabled selected>Select Student</option>
+                            <option value="Adam">Adam Tan</option>
+                            <option value="Betty">Betty Lim</option>
+                            <option value="Charles">Charles Lee</option>
+                            <option value="Clara">Clara Tan</option>
+                            <option value="Don">Don Sim</option>
+                        </select>
+                    </div>
+            </form>
+          </article>
 
-            <div class="col-lg-6">
-                <label for="inputStudent" class="form-label">Student:</label>
-                <select class="form-select" name="muscleGroup">
-                    <option value="Adam">Adam Tan</option>
-                    <option value="Betty">Betty Lim</option>
-                    <option value="Charles">Charles Lee</option>
-                    <option value="Clara">Clara Tan</option>
-                    <option value="Don">Don Sim</option>
-                </select>
-            </div>
-            <div class="col-lg-6"></div>
-            <div class="col-lg-6">
-                <input type="button" class="btn btn-primary" id="btn-ok-exercise" value="Cancel">
-                <input type="button" class="btn btn-danger float-end" id="btn-delete-exercise" value="Done">
-            </div>
-            <div class="col-lg-6">
-
-            </div>
-        </form>
+          <div class="bottom-btns ml-3">
+            <input type="button" class="btn btn-danger float-end" id="btn-back" value="Cancel">
+            <input type="button" class="btn btn-primary" id="btn-to-questions" value="Questions">
         </div>
+        </div>
+      </div>
         <script src="scripts/defaults.js"></script>
         <script src="scripts/scripts.js"></script>
         <script src="scripts/exercise.js"></script>
