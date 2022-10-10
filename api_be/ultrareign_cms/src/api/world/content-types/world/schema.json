@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "worlds",
+  "info": {
+    "singularName": "world",
+    "pluralName": "worlds",
+    "displayName": "World"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Level_Count": {
+      "type": "integer"
+    },
+    "Creator": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "level_question_compositions",
+  "info": {
+    "singularName": "level-question-composition",
+    "pluralName": "level-question-compositions",
+    "displayName": "Level Question Composition",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "question": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::question.question"
+    },
+    "level": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::level.level"
+    },
+    "question_position": {
+      "type": "integer"
+    }
+  }
+}
