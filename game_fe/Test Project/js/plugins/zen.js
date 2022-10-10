@@ -7,6 +7,9 @@
  *
  * This plugin calls Strapi Rest API 
  * 
+ * @command loadWorldData
+ * @desc loadWorldData
+ * 
  * @command loginUser
  * @desc Logins User.
  * 
@@ -46,11 +49,29 @@
  * @command getWorldQuestionComposition
  * @desc getWorldQuestionComposition.
  * 
+ * @command saveVerify
+ * @desc saveVerify
+ * 
  */
 
 (() => {
     //global stuff
     var loginID = "";
+
+
+
+    var assignmentResult;
+    var assignmentScoreCompositionResult;
+    var levelResult;
+    var levelQuestionCompositionResult;
+    var questionResult;
+    var scoreResult;
+    var userResult;
+    var worldResult;
+    var worldLevelCompositionResult;
+    
+
+
     usernameID = 1;
     passwordID = 2;
     returnID = 20;
@@ -72,6 +93,69 @@
         console.log("This function has been called");
 
     }
+
+    loadWorldData = async function(){
+      console.log("loadWorldData is called");
+
+      await getAssignments();
+      //console.log("Assignment Result");
+      //console.log(assignmentResult);
+
+      await getAssignmentScoreComposition();
+      //console.log("Assignment Score Composition Result");
+      //console.log(assignmentScoreCompositionResult);
+
+      await getLevels();
+      //console.log("Level Result");
+      //console.log(levelResult);
+
+      await getLevelQuestionComposition();
+      //console.log("Level question composition Result");
+      //console.log(levelQuestionCompositionResult);
+  
+      await getQuestion();
+      //console.log("Question Result");
+      //console.log(questionResult);
+
+      await getScore();
+      //console.log("Score Result");
+      //console.log(scoreResult);
+
+      await getUser();
+      //console.log("User Result");
+      //console.log(userResult);
+
+      await getWorld();
+      //console.log("World Result");
+      //console.log(worldResult);
+
+      await getWorldQuestionComposition();
+      //console.log("Score Result");
+      //console.log(worldLevelCompositionResult);
+
+      //saves data to save data
+      $gameSystem.assignmentData = assignmentResult;
+      $gameSystem.assignmentScoreCompositionData = assignmentScoreCompositionResult;
+      $gameSystem.levelData = levelResult; 
+      $gameSystem.levelQuestionCompositionData = levelQuestionCompositionResult; 
+      $gameSystem.questionData = questionResult;
+      $gameSystem.scoreData = scoreResult;
+      $gameSystem.userData = userResult;
+      $gameSystem.worldData = worldResult;
+      $gameSystem.worldLevelCompositionData = worldLevelCompositionResult; 
+
+      console.log("==Verifying data==");
+      console.log($gameSystem.assignmentData);
+      console.log($gameSystem.assignmentScoreCompositionData);
+      console.log($gameSystem.levelData); 
+      console.log($gameSystem.levelQuestionCompositionData); 
+      console.log($gameSystem.questionData);
+      console.log($gameSystem.scoreData);
+      console.log($gameSystem.userData);
+      console.log($gameSystem.worldData);
+      console.log($gameSystem.worldLevelCompositionData); 
+
+  }
 
     registerUser = function(username, email, password){
         console.log("registerUser has been called");
@@ -120,19 +204,20 @@
 
 
 //=====================================================
-    getAssignments = function(){
+    getAssignments = async function(){
       
       console.log("getAssignments has been called");
-      console.log("Auth Header: "+'Bearer '+ bearer_token);
-      axios.get('https://ultrareign-be-7mmq3.ondigitalocean.app/api/assignments', {
+      await axios.get('https://ultrareign-be-7mmq3.ondigitalocean.app/api/assignments', {
       headers: {
         Authorization:
           'Bearer '+ bearer_token,
       },
     }).then(response => {
-      console.log(response);
+      console.log("RESPONSE: "+response.status);
+      assignmentResult = response.data;
       return response.data;
     }).catch(error => {
+      console.log("RESPONSE: "+error.response.status);
       console.log('An error occurred:', error.response);
       loginID = "";
       $gameVariables.setValue(4,error.response.status);
@@ -140,19 +225,20 @@
 
     }
 
-    getAssignmentScoreComposition = function(){
+    getAssignmentScoreComposition = async function(){
       
       console.log("getAssignmentScoreComposition has been called");
-      console.log("Auth Header: "+'Bearer '+ bearer_token);
-      axios.get('https://ultrareign-be-7mmq3.ondigitalocean.app/api/assignment-score-compositions', {
+      await axios.get('https://ultrareign-be-7mmq3.ondigitalocean.app/api/assignment-score-compositions', {
       headers: {
         Authorization:
           'Bearer '+ bearer_token,
       },
     }).then(response => {
-      console.log(response);
+      console.log("RESPONSE: "+response.status);
+      assignmentScoreCompositionResult = response.data;
       return response.data;
     }).catch(error => {
+      console.log("RESPONSE: "+error.response.status);
       console.log('An error occurred:', error.response);
       loginID = "";
       $gameVariables.setValue(4,error.response.status);
@@ -161,18 +247,19 @@
     }
 
 
-    getLevels = function(){   
+    getLevels = async function(){   
       console.log("getLevels has been called");
-      console.log("Auth Header: "+'Bearer '+ bearer_token);
-      axios.get('https://ultrareign-be-7mmq3.ondigitalocean.app/api/levels', {
+      await axios.get('https://ultrareign-be-7mmq3.ondigitalocean.app/api/levels', {
       headers: {
         Authorization:
           'Bearer '+ bearer_token,
       },
     }).then(response => {
-      console.log(response);
+      console.log("RESPONSE: "+response.status);
+      levelResult = response.data;
       return response.data;
     }).catch(error => {
+      console.log("RESPONSE: "+error.response.status);
       console.log('An error occurred:', error.response);
       loginID = "";
       $gameVariables.setValue(4,error.response.status);
@@ -180,18 +267,19 @@
 
     }
 
-    getLevelQuestionComposition = function(){   
+    getLevelQuestionComposition = async function(){   
       console.log("getLevelQuestionComposition has been called");
-      console.log("Auth Header: "+'Bearer '+ bearer_token);
-      axios.get('https://ultrareign-be-7mmq3.ondigitalocean.app/api/level-question-compositions', {
+      await axios.get('https://ultrareign-be-7mmq3.ondigitalocean.app/api/level-question-compositions', {
       headers: {
         Authorization:
           'Bearer '+ bearer_token,
       },
     }).then(response => {
-      console.log(response);
+      console.log("RESPONSE: "+response.status);
+      levelQuestionCompositionResult = response.data;
       return response.data;
     }).catch(error => {
+      console.log("RESPONSE: "+error.response.status);
       console.log('An error occurred:', error.response);
       loginID = "";
       $gameVariables.setValue(4,error.response.status);
@@ -199,18 +287,19 @@
 
     }
 
-    getQuestion = function(){   
+    getQuestion = async function(){   
       console.log("getQuestion has been called");
-      console.log("Auth Header: "+'Bearer '+ bearer_token);
-      axios.get('https://ultrareign-be-7mmq3.ondigitalocean.app/api/questions', {
+      await axios.get('https://ultrareign-be-7mmq3.ondigitalocean.app/api/questions', {
       headers: {
         Authorization:
           'Bearer '+ bearer_token,
       },
     }).then(response => {
-      console.log(response);
+      console.log("RESPONSE: "+response.status);
+      questionResult = response.data;
       return response.data;
     }).catch(error => {
+      console.log("RESPONSE: "+error.response.status);
       console.log('An error occurred:', error.response);
       loginID = "";
       $gameVariables.setValue(4,error.response.status);
@@ -218,36 +307,58 @@
 
     }
 
-    getUser = function(){   
+    getScore = async function(){   
+      console.log("getScore has been called");
+      await axios.get('https://ultrareign-be-7mmq3.ondigitalocean.app/api/scores', {
+      headers: {
+        Authorization:
+          'Bearer '+ bearer_token,
+      },
+    }).then(response => {
+      console.log("RESPONSE: "+response.status);
+      scoreResult = response.data;
+      return response.data;
+    }).catch(error => {
+      console.log("RESPONSE: "+error.response.status);
+      console.log('An error occurred:', error.response);
+      loginID = "";
+      $gameVariables.setValue(4,error.response.status);
+    });
+
+    }
+
+    getUser = async function(){   
       console.log("getUser has been called");
-      console.log("Auth Header: "+'Bearer '+ bearer_token);
-      axios.get('https://ultrareign-be-7mmq3.ondigitalocean.app/api/users', {
+      await axios.get('https://ultrareign-be-7mmq3.ondigitalocean.app/api/users', {
       headers: {
         Authorization:
           'Bearer '+ bearer_token,
       },
     }).then(response => {
-      console.log(response);
+      console.log("RESPONSE: "+response.status);
+      userResult = response.data;
       return response.data;
     }).catch(error => {
+      console.log("RESPONSE: "+error.response.status);
       console.log('An error occurred:', error.response);
       loginID = "";
       $gameVariables.setValue(4,error.response.status);
     });
 
     }
-    getWorld = function(){   
+    getWorld = async function(){   
       console.log("getWorld has been called");
-      console.log("Auth Header: "+'Bearer '+ bearer_token);
-      axios.get('https://ultrareign-be-7mmq3.ondigitalocean.app/api/worlds', {
+      await axios.get('https://ultrareign-be-7mmq3.ondigitalocean.app/api/worlds', {
       headers: {
         Authorization:
           'Bearer '+ bearer_token,
       },
     }).then(response => {
-      console.log(response);
+      console.log("RESPONSE: "+response.status);
+      worldResult = response.data;
       return response.data;
     }).catch(error => {
+      console.log("RESPONSE: "+error.response.status);
       console.log('An error occurred:', error.response);
       loginID = "";
       $gameVariables.setValue(4,error.response.status);
@@ -255,18 +366,19 @@
 
     }
 
-    getWorldQuestionComposition = function(){   
+    getWorldQuestionComposition = async function(){   
       console.log("getWorld has been called");
-      console.log("Auth Header: "+'Bearer '+ bearer_token);
-      axios.get('https://ultrareign-be-7mmq3.ondigitalocean.app/api/world-question-compositions', {
+      await axios.get('https://ultrareign-be-7mmq3.ondigitalocean.app/api/world-question-compositions', {
       headers: {
         Authorization:
           'Bearer '+ bearer_token,
       },
     }).then(response => {
-      console.log(response);
+      console.log("RESPONSE: "+response.status);
+      worldLevelCompositionResult = response.data;
       return response.data;
     }).catch(error => {
+      console.log("RESPONSE: "+error.response.status);
       console.log('An error occurred:', error.response);
       loginID = "";
       $gameVariables.setValue(4,error.response.status);
@@ -274,6 +386,21 @@
 
     }
 
+//save data verification
+
+    saveVerify = function(){   
+      console.log("Save Verification is called");
+      console.log("==Verifying data==");
+      console.log($gameSystem.assignmentData);
+      console.log($gameSystem.assignmentScoreCompositionData);
+      console.log($gameSystem.levelData); 
+      console.log($gameSystem.levelQuestionCompositionData); 
+      console.log($gameSystem.questionData);
+      console.log($gameSystem.scoreData);
+      console.log($gameSystem.userData);
+      console.log($gameSystem.worldData);
+      console.log($gameSystem.worldLevelCompositionData); 
+    }
 
 //=====================================================
     PluginManager.registerCommand("zen", "loginUser", () => {
@@ -318,6 +445,11 @@
 
     PluginManager.registerCommand("zen", "getWorldQuestionComposition", () => {
       getWorldQuestionComposition();
+      
+    });
+
+    PluginManager.registerCommand("zen", "saveVerify", () => {
+      saveVerify();
       
     });
 
