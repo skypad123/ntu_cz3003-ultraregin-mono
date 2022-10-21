@@ -35,7 +35,7 @@
     margin-left: 200px;
     height:100px;
     padding: 1px 16px;
-    
+    background-color: beige;
   }
 
   div.container-login {
@@ -45,10 +45,32 @@
     
   }
 
+  .user-details-container{
+    margin-top: 30px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .img-center {
     display: block;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .form-login{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  .user-input{
+    height: 50px;
+  }
+
+  .form-control {
+    height: 30px;
   }
 
   .btn-primary {
@@ -61,6 +83,9 @@
     background-color: #285474;
     border-color: #285474;
     color: white;
+    width:200px;
+    height: 30px;
+    border-radius: 5px;
   }
 
   .btn:hover{
