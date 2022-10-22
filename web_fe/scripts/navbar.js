@@ -9,7 +9,7 @@ class NavBar_Student extends HTMLElement {
 
         <div class="sidebar">
             <img src="img/sidebar-logo.jpg" style="width:180px">
-            <a class="nav-link" id="nav-index" href="summary-report.html"><i class="fa fa-fw fa-play"></i>Play</a>
+            <a class="nav-link" id="nav-index" href="student-play.html"><i class="fa fa-fw fa-play"></i>Play</a>
             <a class="nav-link" id="nav-workouts" href="create-question.html"><i class="fa fa-fw fa-plus"></i>Create</a>
             <a class="nav-link" id="nav-exercises" href="read-question.html"><i class="fa fa-fw fa-book"></i>Read</a>
             <a class="nav-link" id="nav-mycoach" href="update-question.html"><i class="fa fa-fw fa-refresh"></i>Update</a>
