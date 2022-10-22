@@ -35,7 +35,6 @@
     margin-left: 200px;
     height:100px;
     padding: 1px 16px;
-    background-color: beige;
   }
 
   div.container-login {
@@ -64,6 +63,11 @@
     margin-right: auto;
   }
 
+  .form-label{
+    display:block;
+    text-align: center;
+  }
+
 
   .user-input{
     height: 50px;
@@ -71,6 +75,10 @@
 
   .form-control {
     height: 30px;
+    width: 700px;
+    margin: 5px;
+    display: block;
+    text-align: center;
   }
 
   .btn-primary {
@@ -108,15 +116,28 @@
     display:flex;
     justify-content: space-between;
     padding: 15px;
+    width: 80%;
   }
 
   .input-group-btn{
-    height:40px;
-    font-size:10px;
+    /* height:40px; */
+    /* font-size:10px;
     line-height:1.3333333;
-    border-radius:6px;
-    display:block;
+    border-radius:6px; */
+    display:flex;
+    justify-content: center;
+    /* background-color: beige; */
+  }
 
+  .btn-world {
+    background-color: #285474;
+    border-color: #285474;
+    color: white;
+    width:200px;
+    height: 30px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 5px;
   }
 
   .input-group-btn input
@@ -139,3 +160,18 @@
     text-align: center;
   }
 
+  .graph {
+    position:relative;
+    max-width: 1000px;
+    height: 400px;
+    background: #ddd;   
+  }
+
+  .bar {
+    height: 20%;
+    background: beige;
+    z-index:25;
+    border-top: 5px solid #222;
+    border-left: 5px solid #222;
+    border-right: 5px solid #222;
+  }

@@ -21,49 +21,48 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-lg">
-                                <h3 class="mt-3">Play</h3>
+                                <h2 class="mt-3">Play</h2>
                             </div>
                         </div>
 
-                        <div class="card mt-3 border-0">
-                            <article class="card-body mx-auto">
-                                <form class="row-g-3" id="form-question" >
+                        <div class="user-details-container">
+                            
+                            <div class="world-btns">
+                                <label for="inputName" class="form-label">World:</label>
+                                <div class="input-group-btn">
+                                    <div class="btn-world">
+                                        <input type="radio" name="world" value="1" />1
+                                    </div>
+                                    <div class="btn-world">
+                                        <input type="radio" name="world" value="2" />2
+                                    </div>
+                                    <div class="btn-world">
+                                        <input type="radio" name="world" value="3" />3
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="world-btns">
+                                <label for="inputName" class="form-label">Level:</label>
+                                <div class="input-group-btn">
+                                    <div class="btn-world">
+                                        <input type="radio" name="level" value="1" />1
+                                    </div>
+                                    <div class="btn-world">
+                                        <input type="radio" name="level" value="2" />2
+                                    </div>
+                                    <div class="btn-world">
+                                        <input type="radio" name="level" value="3" />3
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <div class="d-grid" style={{marginTop: '20px'}}>
+                                <input type="button" class="btn btn-primary" value=" PLAY! " />
+                            </div> 
+                            
                                 
-                                    <div class="world-btns" style="background-color:beige">
-                                        <label for="inputName" class="form-label">World:</label>
-                                        <div class="input-group-btn" data-toggle="buttons">
-                                            <label class="btn btn-primary">
-                                            <input type="radio" name="world" id="world1" autocomplete="off" checked>1</input>
-                                            </label>
-                                            <label class="btn btn-primary">
-                                            <input type="radio" name="world" id="world2" autocomplete="off">2</input>
-                                            </label>
-                                            <label class="btn btn-primary">
-                                            <input type="radio" name="world" id="world3" autocomplete="off">3</input>
-                                            </label>
-                                        </div>
-                                    </div>
-                        
-                                    <div class="level-btn">
-                                        <label for="inputName" class="form-label">Level:</label>
-                                        <div class="input-group-btn" data-toggle="buttons">
-                                            <label class="btn btn-primary">
-                                            <input type="radio" name="level" id="level1" autocomplete="off" checked>1</input>
-                                            </label>
-                                            <label class="btn btn-primary">
-                                            <input type="radio" name="level" id="level2" autocomplete="off">2</input>
-                                            </label>
-                                            <label class="btn btn-primary">
-                                            <input type="radio" name="level" id="level3" autocomplete="off">3</input>
-                                            </label>
-                                        </div> 
-                                    </div>
-                                        
-                                    <div class="d-grid">
-                                        <input type="button" class="btn btn-primary" id="btn-play" value=" PLAY! "></input>
-                                    </div> 
-                                </form>
-                            </article>
+                            
                         </div>
                     
                     </div>
