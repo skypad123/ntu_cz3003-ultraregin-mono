@@ -1,7 +1,7 @@
-import React , {useState}from 'react';
+import React , {useEffect, useState}from 'react';
 import './style.css';
 import SideBar from './components/SideBar';
-import {Routes, Route}
+import {Routes, Route, useLocation, useNavigate}
 from 'react-router-dom';
 import Play from './components/Play/play';
 import Login from './components/Login/login';
@@ -10,38 +10,24 @@ import ReadQuestions from './components/CRUD/read-questions';
 import UpdateQuestions from './components/CRUD/update-questions';
 import DeleteQuestions from './components/CRUD/delete-questions';
 import axios from 'axios';
-import {useNavigate} from 'react-router-dom';
 
 
+function useQuery(){
+    const {search} = useLocation();
+    return React.useMemo(()=> new URLSearchParams(search),[search]);
+}
 
-//   window.fbAsyncInit = function() {
-//     FB.init({
-//       appId      : '{your-app-id}',
-//       cookie     : true,
-//       xfbml      : true,
-//       version    : '{api-version}'
-//     });
-      
-//     FB.AppEvents.logPageView();   
-      
-//   };
-
-//   (function(d, s, id){
-//      var js, fjs = d.getElementsByTagName(s)[0];
-//      if (d.getElementById(id)) {return;}
-//      js = d.createElement(s); js.id = id;
-//      js.src = "https://connect.facebook.net/en_US/sdk.js";
-//      fjs.parentNode.insertBefore(js, fjs);
-//    }(document, 'script', 'facebook-jssdk'));
 
 function useLoginInfo(){
+    const [onFirstLoad, setOnFirstLoad] = useState(true);
     const [role, setRole] = useState('');
+    const queryParams = useQuery();
     const nav = useNavigate();
-    
+
     async function loginViaLocal(identifier,password){
 
         async function localLoginToServer(){
-            axios.request({
+            return axios.request({
                 method: 'post',
                 url: `${process.env.REACT_APP_BE_URL}/auth/local`,
                 headers:{
@@ -61,51 +47,93 @@ function useLoginInfo(){
                 }
             });
         }
+        try{
+           const jwtData = await localLoginToServer();
+           console.log(jwtData.data.jwt);
+           const userData  = await getUserRoleData(jwtData.data.jwt);
+           sessionStorage.setItem("jwt", userData.jwt);
+           setRole(userData.data.role.type);
+           nav("/"); 
+        }catch(e){
+            console.log(e);
+        }  
+    }
 
+    function paramsData(){
+        return {
+            "access_token" :  queryParams.get("access_token"),
+            "raw%5Baccess_token%5D" : queryParams.get("raw%5Baccess_token%5D"),
+            "raw%5Btoken_type%5D" : queryParams.get("raw%5Btoken_type%5D"),
+            "raw%5Bexpires_in%5D" : queryParams.get("raw%5Bexpires_in%5D"),
+        };
+    }
+
+    async function authProviderCallback(data){
+        async function getUserData(){
+            return axios.request({
+                method: 'get',
+                url: `${process.env.REACT_APP_BE_URL}/auth/facebook/callback`,
+                params:  data
+            }).then((data)=>{
+                switch(data.status){
+                    case 200 :
+                        //console.log(data);
+                        return data;
+                    default :
+                        throw data;
+                }
+            });
+        }
 
         try{
-           await localLoginToServer(); 
+            const jwtData = await getUserData();
+            const userData  = await getUserRoleData(jwtData.data.jwt); 
+            sessionStorage.setItem("jwt", userData.data.jwt);
+            setRole(userData.data.role.type);
+            nav("/");
         }catch(e){
             console.log(e);
         }
-        
-    }
-
-    async function loginViaFacebook(){
-        // async function FacebookLoginToServer(){
-        //     axios.request({
-        //         method: 'get',
-        //         url: `${process.env.REACT_APP_BE_URL}/connect/facebook`,
-        //         headers:{
-        //             Authorization: `Bearer ${process.env.REACT_APP_BE_KEY}`
-        //         },    
-        //     }).then((data)=>{
-        //         switch(data.status){
-        //             case 200 :
-        //                 console.log(data);
-        //                 return data;
-        //             default :
-        //                 throw data;
-        //         }
-        //     });
-        // }
-
-        // try{
-        //     nav(`/facebook`);
-        //     //await FacebookLoginToServer(); 
-        //  }catch(e){
-        //      console.log(e);
-        //  }
 
     }
 
+    async function getUserRoleData(jwtToken){
+        return axios.request({
+            method: 'get',
+            url: `${process.env.REACT_APP_BE_URL}/users/me`,
+            headers:{
+                Authorization: `Bearer ${jwtToken}`
+            },
+            params:  {
+                "populate": "role"
+            }
+        }).then((data)=>{
+            switch(data.status){
+                case 200 :
+                    //console.log(data);
+                    return data;
+                default :
+                    throw data;
+            }
+        });
+    }
 
-    return {role, loginViaLocal, loginViaFacebook};
+    useEffect(() => {
+        if (onFirstLoad){
+            const data = paramsData();
+            if(data.access_token != null) {
+                authProviderCallback(data);
+            }
+            setOnFirstLoad(!onFirstLoad);
+        }
+    });
+
+    return {role, loginViaLocal};
 }
 
 function App() {
 
-    const {role, loginViaLocal, loginViaFacebook}= useLoginInfo();
+    const {role, loginViaLocal} = useLoginInfo();
 
     function StudentApp(){
         return (
@@ -141,22 +169,22 @@ function App() {
     function LoginPage(){
         return (
             <>
-                <Login onGoogleSignIn={()=>{}} onFacebookSignIn={loginViaFacebook} onEmailSignIn={loginViaLocal}/>
-                <Routes>
+                <Login onEmailSignIn={loginViaLocal}/>
+                {/* <Routes>
                     <Route path='/facebook' component={() => { 
                         window.location.replace(); 
                         return null;
                     }}/>
-                </Routes>
+                </Routes> */}
             </>
         );
     }
 
 
     switch(role){
-        case "professor":
+        case "professors":
             return ProfessorApp();
-        case "student":
+        case "students":
             return StudentApp();
         default:
             return LoginPage();

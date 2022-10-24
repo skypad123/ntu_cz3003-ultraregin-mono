@@ -39,11 +39,7 @@ const Login = (props) => {
                         <input type="button" class="btn" id="btn-login" onClick={()=>{props.onEmailSignIn(identifier,password)}} value="LOGIN"></input>
                         <Link to="/Facebook">
                             <input type="button" class="btn" id="btn-login" value="LOGIN by Facebook"></input>                      
-                        </Link>
-                        <Link to="/Facebook">
-                            <input type="button" class="btn" id="btn-login" value="LOGIN by Google"></input>                      
-                        </Link>
-                        
+                        </Link>                        
                       </div>
                        
 
@@ -60,7 +56,7 @@ const Login = (props) => {
   function FacebookRedirect(){
 
 
-    
+
     window.location.replace(`${process.env.REACT_APP_BE_URL}/connect/facebook`);
     return null
   }
