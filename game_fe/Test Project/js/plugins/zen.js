@@ -81,7 +81,7 @@
 
     testFunction = function(){
         
-        axios.post('https://ultrareign-be-7mmq3.ondigitalocean.app/api/auth/local/', {
+        axios.post('https://ultraregin-be-vs7vz.ondigitalocean.app/api/auth/local/', {
         'identifier': 'zenzen123',
         'password': 'zenzen123'
       }).then(response => {
@@ -180,7 +180,7 @@
 
     registerUser = function(username, email, password){
         console.log("registerUser has been called");
-        axios.post('https://ultrareign-be-7mmq3.ondigitalocean.app/api/auth/local/register', {
+        axios.post('https://ultraregin-be-vs7vz.ondigitalocean.app/api/auth/local/register', {
         'username': username,
         'email': email,
         'password': password
@@ -203,7 +203,7 @@
 
     loginUser = function(username, password){
         console.log("loginUser has been called");
-        axios.post('https://ultrareign-be-7mmq3.ondigitalocean.app/api/auth/local/', {
+        axios.post('https://ultraregin-be-vs7vz.ondigitalocean.app/api/auth/local/', {
         'identifier': username,
         'password': password
       }).then(response => {
@@ -243,7 +243,7 @@
         };
 
         const reqOptions = {
-          url: "https://ultrareign-be-7mmq3.ondigitalocean.app/api/scores",
+          url: "https://ultraregin-be-vs7vz.ondigitalocean.app/api/scores",
           method: "POST",
           headers: bearerparams,
           data: bodyparams,
@@ -262,7 +262,7 @@
     getAssignments = async function(){
       
       console.log("getAssignments has been called");
-      await axios.get('https://ultrareign-be-7mmq3.ondigitalocean.app/api/assignments', {
+      await axios.get('https://ultraregin-be-vs7vz.ondigitalocean.app/api/assignments', {
       headers: {
         Authorization:
           'Bearer '+ bearer_token,
@@ -283,7 +283,7 @@
     getAssignmentScoreComposition = async function(){
       
       console.log("getAssignmentScoreComposition has been called");
-      await axios.get('https://ultrareign-be-7mmq3.ondigitalocean.app/api/assignment-score-compositions', {
+      await axios.get('https://ultraregin-be-vs7vz.ondigitalocean.app/api/assignment-score-compositions', {
       headers: {
         Authorization:
           'Bearer '+ bearer_token,
@@ -304,7 +304,7 @@
 
     getLevels = async function(){   
       console.log("getLevels has been called");
-      await axios.get('https://ultrareign-be-7mmq3.ondigitalocean.app/api/levels', {
+      await axios.get('https://ultraregin-be-vs7vz.ondigitalocean.app/api/levels', {
       headers: {
         Authorization:
           'Bearer '+ bearer_token,
@@ -324,7 +324,7 @@
 
     getLevelQuestionComposition = async function(){   
       console.log("getLevelQuestionComposition has been called");
-      await axios.get('https://ultrareign-be-7mmq3.ondigitalocean.app/api/level-question-compositions', {
+      await axios.get('https://ultraregin-be-vs7vz.ondigitalocean.app/api/level-question-compositions', {
       headers: {
         Authorization:
           'Bearer '+ bearer_token,
@@ -344,7 +344,7 @@
 
     getQuestion = async function(){   
       console.log("getQuestion has been called");
-      await axios.get('https://ultrareign-be-7mmq3.ondigitalocean.app/api/questions', {
+      await axios.get('https://ultraregin-be-vs7vz.ondigitalocean.app/api/questions', {
       headers: {
         Authorization:
           'Bearer '+ bearer_token,
@@ -364,7 +364,7 @@
 
     getScore = async function(){   
       console.log("getScore has been called");
-      await axios.get('https://ultrareign-be-7mmq3.ondigitalocean.app/api/scores', {
+      await axios.get('https://ultraregin-be-vs7vz.ondigitalocean.app/api/scores', {
       headers: {
         Authorization:
           'Bearer '+ bearer_token,
@@ -384,7 +384,7 @@
 
     getUser = async function(){   
       console.log("getUser has been called");
-      await axios.get('https://ultrareign-be-7mmq3.ondigitalocean.app/api/users', {
+      await axios.get('https://ultraregin-be-vs7vz.ondigitalocean.app/api/users', {
       headers: {
         Authorization:
           'Bearer '+ bearer_token,
@@ -403,7 +403,7 @@
     }
     getWorld = async function(){   
       console.log("getWorld has been called");
-      await axios.get('https://ultrareign-be-7mmq3.ondigitalocean.app/api/worlds', {
+      await axios.get('https://ultraregin-be-vs7vz.ondigitalocean.app/api/worlds', {
       headers: {
         Authorization:
           'Bearer '+ bearer_token,
@@ -423,7 +423,7 @@
 
     getWorldQuestionComposition = async function(){   
       console.log("getWorld has been called");
-      await axios.get('https://ultrareign-be-7mmq3.ondigitalocean.app/api/world-question-compositions', {
+      await axios.get('https://ultraregin-be-vs7vz.ondigitalocean.app/api/world-question-compositions', {
       headers: {
         Authorization:
           'Bearer '+ bearer_token,
