@@ -149,11 +149,32 @@
       console.log($gameSystem.assignmentScoreCompositionData);
       console.log($gameSystem.levelData); 
       console.log($gameSystem.levelQuestionCompositionData); 
-      console.log($gameSystem.questionData);
+      console.log("Question data",$gameSystem.questionData);
       console.log($gameSystem.scoreData);
       console.log($gameSystem.userData);
       console.log($gameSystem.worldData);
       console.log($gameSystem.worldLevelCompositionData); 
+      let randomArrayUsed = [];
+      let questionList = [];
+      let maxRand = $gameSystem.questionData.data.length;
+      let jsonData = {};
+      while(randomArrayUsed.length < 9){
+        let randomIndex = Math.floor(Math.random() * maxRand);
+        if(!randomArrayUsed.includes(randomIndex)){
+          console.log($gameSystem.questionData.data[randomIndex]);
+          jsonData = {
+            description: $gameSystem.questionData.data[randomIndex].attributes.description,
+            fake_answers: ($gameSystem.questionData.data[randomIndex].attributes.fake_answers).split(','),
+            actual_answer: $gameSystem.questionData.data[randomIndex].attributes.actual_answer,
+          }
+          console.log(jsonData);
+          randomArrayUsed.push(randomIndex);
+          questionList.push(jsonData);
+        }
+        
+      }
+      $gameSystem.internalQuestionData = questionList;
+      console.log($gameSystem.internalQuestionData);
 
   }
 
