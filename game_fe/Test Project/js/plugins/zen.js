@@ -204,6 +204,40 @@
 
 
 //=====================================================
+      uploadScores = async function(levelid, playerid, questions_attempted, questions_correct, assignment_score_composition){
+        console.log(levelid, playerid, questions_attempted, questions_correct, assignment_score_composition);
+        console.log("uploadScores has been called");
+        console.log(bearer_token);
+        const bodyparams = JSON.stringify({
+          "data": {
+            "level": levelid,
+            "player": playerid,
+            "questions_attempted": questions_attempted,
+            "questions_correct": questions_correct
+          }
+        });
+        const bearerparams = {
+            "Authorization": 'Bearer '+ bearer_token,
+            "Content-Type": "application/json" 
+        };
+
+        const reqOptions = {
+          url: "https://ultrareign-be-7mmq3.ondigitalocean.app/api/scores",
+          method: "POST",
+          headers: bearerparams,
+          data: bodyparams,
+        }
+
+        await axios.request(reqOptions).then(response => {
+          console.log("RESPONSE: ",response);
+          return response.data;
+        }).catch(error => {
+          console.log("RESPONSE: "+error.response.status);
+          console.log('An error occurred:', error);
+        });
+
+      }
+
     getAssignments = async function(){
       
       console.log("getAssignments has been called");
@@ -213,7 +247,7 @@
           'Bearer '+ bearer_token,
       },
     }).then(response => {
-      console.log("RESPONSE: "+response.status);
+      console.log("RESPONSE: ",response);
       assignmentResult = response.data;
       return response.data;
     }).catch(error => {
@@ -401,6 +435,9 @@
       console.log($gameSystem.worldData);
       console.log($gameSystem.worldLevelCompositionData); 
     }
+
+//upload score
+
 
 //=====================================================
     PluginManager.registerCommand("zen", "loginUser", () => {
