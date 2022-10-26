@@ -15,8 +15,13 @@ export const Nav = styled.nav`
 export const NavLink = styled(Link)`
     display: block;
     color: black;
+    font-weight: bold;
     padding: 16px;
     text-decoration: none;
+    &.active {
+        background-color: #285474;
+        opacity: 80%;
+      }
   }
 `;
   

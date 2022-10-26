@@ -1,14 +1,19 @@
 import React , {useEffect, useState}from 'react';
 import './style.css';
-import SideBar from './components/SideBar';
+import { StudentSideBar, ProfessorSideBar } from './components/SideBar';
 import {Routes, Route, useLocation, useNavigate}
 from 'react-router-dom';
-import Play from './components/Play/play';
 import Login from './components/Login/login';
+import LandingPage from './components/Main/landing-page'
+import SummaryReport from './components/SummaryReports/summary-report';
+import SummaryReportStudent from './components/SummaryReports/summary-report-student';
+import Play from './components/Play/play';
 import CreateQuestions from './components/CRUD/create-questions';
 import ReadQuestions from './components/CRUD/read-questions';
-import UpdateQuestions from './components/CRUD/update-questions';
-import DeleteQuestions from './components/CRUD/delete-questions';
+import ChooseUpdateQuestions from './components/CRUD/choose-update-questions';
+import ChooseDeleteQuestions from './components/CRUD/choose-delete-questions';
+import UpdateQuestion from './components/CRUD/update-question';
+import Challenge from './components/Play/challenge'
 import axios from 'axios';
 
 
@@ -138,13 +143,15 @@ function App() {
     function StudentApp(){
         return (
             <>
-            <SideBar />
+            <StudentSideBar />
             <Routes>
                 <Route path='/play' element={<Play />} />
                 <Route path='/create' element={<CreateQuestions/>} />
                 <Route path='/read' element={<ReadQuestions/>} />
-                <Route path='/update' element={<UpdateQuestions/>} />
-                <Route path='/delete' element={<DeleteQuestions/>} />
+                <Route path='/choose-update-questions' element={<ChooseUpdateQuestions/>} />
+                <Route path='/update-question' element={<UpdateQuestion/>} />
+                <Route path='/choose-delete-questions' element={<ChooseDeleteQuestions/>} />
+                <Route path='/challenge' element={<Challenge/>} />
             </Routes>
             </>
         );
@@ -154,13 +161,15 @@ function App() {
     function ProfessorApp(){
         return (
             <>
-            <SideBar />
+            <ProfessorSideBar />
             <Routes>
-                <Route path='/play' element={<Play />} />
+                <Route path='/summary-report' element={<SummaryReport />} />
+                <Route path='/summary-report-student' element={<SummaryReportStudent />} />
                 <Route path='/create' element={<CreateQuestions/>} />
                 <Route path='/read' element={<ReadQuestions/>} />
-                <Route path='/update' element={<UpdateQuestions/>} />
-                <Route path='/delete' element={<DeleteQuestions/>} />
+                <Route path='/choose-update-questions' element={<ChooseUpdateQuestions/>} />
+                <Route path='/update-question' element={<UpdateQuestion/>} />
+                <Route path='/choose-delete-questions' element={<ChooseDeleteQuestions/>} />
             </Routes>
             </>
         );

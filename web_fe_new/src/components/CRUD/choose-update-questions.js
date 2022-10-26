@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
+import { createSearchParams, useNavigate } from 'react-router-dom';
 
-const ReadQuestions = () => {
+const ChooseUpdateQuestions = () => {
     const [questionData, setQuestionData] = useState('');
+    const navigate = useNavigate();
+    const [questionID, setQuestionID] = useState('');
 
     useEffect(() => {
         getAllQuestionData();
@@ -17,7 +20,7 @@ const ReadQuestions = () => {
             }, 
         })
         .then ((response) => {
-            // console.log(response.data.data)
+            console.log(response.data.data)
             const allQuestionData = response.data.data;
             setQuestionData(allQuestionData);
         })
@@ -25,22 +28,34 @@ const ReadQuestions = () => {
         
     }
 
+    const handleQuestionUpdate = (questionID) => {
+        setQuestionID(questionID)
+        console.log("quesitonID is ", questionID.toString())
+
+        navigate({
+            pathname: '/update-question',
+            search: createSearchParams({
+                id: questionID.toString()
+            }).toString()
+        });
+    }
+
     return (
         <section>
           <div class="container">
               <div class="row">
-                <h2 class="mt-3">Read Questions</h2>
+                <h2 class="mt-3">Update Questions</h2>
+                <h3 style={{color: '#285474'}}> Choose a question to update</h3>
               </div>
 
               <div class="question-details-container">
-                    
                     {
                         (questionData.length > 0) ? questionData.map(question => {
-                            console.log(question.attributes)
+                            // console.log(question.id)
                             return (
-                                <div class="question-container">
+                                <div class="question-container" onClick={() => handleQuestionUpdate(question.id)}>
                                     <div class="heading"> 
-                                        <h3 style={{marginRight:'10px'}}>World: {question.attributes.name.split(",")[0] === "4" ? "Custom" : question.attributes.name.split(",")[0]} </h3> 
+                                        <h3 style={{marginRight:'10px'}}>World:  {question.attributes.name.split(",")[0] === "4" ? "Custom" : question.attributes.name.split(",")[0]} </h3> 
                                         <h3 style={{marginRight:'10px'}}>Level: {question.attributes.name.split(",")[1]} </h3>
                                         <h3 style={{marginRight:'10px'}}>Question No.: {question.attributes.name.split(",")[2]} </h3>
                                     </div>
@@ -85,5 +100,4 @@ const ReadQuestions = () => {
 
 );
 }
-
-export default ReadQuestions;
+export default ChooseUpdateQuestions;

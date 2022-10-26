@@ -50,6 +50,11 @@ div.container-login {
   flex-direction: column;
   align-items: center;
 }
+.question-container {
+  /* background-color: beige; */
+  border-bottom: 2px solid lightgray;
+}
+
 
 .img-center {
   display: block;
@@ -66,6 +71,7 @@ div.container-login {
 .form-label{
   display:block;
   text-align: center;
+  font-weight: bold;
 }
 
 
@@ -89,12 +95,13 @@ div.container-login {
 
 .btn {
   background-color: #285474;
-  border-color: #285474;
+  border:0px;
   color: white;
   width:200px;
   height: 30px;
   border-radius: 5px;
 }
+
 
 .btn:hover{
   opacity:90%;
@@ -140,6 +147,21 @@ div.container-login {
   margin: 5px;
 }
 
+.input-group-btn label {
+  background-color: #285474;
+  border-color: #285474;
+  color: white;
+  width:200px;
+  height: 30px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 5px;
+}
+
+.input-group-btn input[type="radio"]:checked+label {
+  box-shadow: rgba(0, 0, 0, 0.8) 0px 8px 8px;
+}
+
 .input-group-btn input
 {
   visibility: hidden;
@@ -174,4 +196,42 @@ div.container-login {
   border-top: 5px solid #222;
   border-left: 5px solid #222;
   border-right: 5px solid #222;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+
+.confirm-delete-btns {
+  padding: 16px;
+  text-align:center;
+}
+
+.dropdown-box {
+  width: 50%;
+  height: 30px;
+  border-radius: 10px;
+  border: 2px solid #285474;
+  font-size: 18px;
+}
+
+.heading {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: -20px;
+}
+
+table, th, tr, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  width: 30%;
 }
