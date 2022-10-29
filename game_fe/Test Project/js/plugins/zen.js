@@ -69,15 +69,24 @@
     var userResult;
     var worldResult;
     var worldLevelCompositionResult;
-    
+    var isLoggedIn;
 
 
-    usernameID = 1;
-    passwordID = 2;
-    returnID = 20;
+    usernameID = 19;
+    passwordID = 20;
+    returnID = 18;
     bearer_token = "970b635e2c091a14bec6c5035e75577a6d2ade6e67c10f118e0ab4a880eb941297850b921e24723197effddef172a60f8e669ac6aeaf573ad57a4aa6dfcc4ac6965f3781053eb1fe06e2e8f19ad8bc01c470cceb3afd6fb2525dcbfbaa4bb16369357f78ae1bb750f04f5a30ec08986a4a88bebe2e01d861ba12a78ab1edb9a5";
     //
     const axios = require('axios').default;
+
+    setIsLoggedIn = function(loginState){
+      isLoggedIn = loginState;
+      console.log("setIsloggedIn:",isLoggedIn);
+    }
+    getIsLoggedIn = function(){
+      console.log("getIsloggedIn:",isLoggedIn);
+      return isLoggedIn;
+    }
 
     testFunction = function(){
         
@@ -93,6 +102,7 @@
         console.log("This function has been called");
 
     }
+
 
     loadWorldData = async function(){
       console.log("loadWorldData is called");
@@ -201,28 +211,35 @@
         return $gameVariables.value(3);
     }
 
-    loginUser = function(username, password){
+    loginUser = async function(username, password){
         console.log("loginUser has been called");
-        axios.post('https://ultraregin-be-vs7vz.ondigitalocean.app/api/auth/local/', {
+        await axios.post('https://ultraregin-be-vs7vz.ondigitalocean.app/api/auth/local/', {
         'identifier': username,
         'password': password
-      }).then(response => {
+      }).then(async response => {
         console.log(response);
-        console.log('User profile', response.data.user);
-        console.log('User token', response.data.jwt);
-        loginID = response.data.jwt;
-        $gameVariables.setValue(3,loginID);
-        $gameVariables.setValue(4,response.status);
+        isStudent = await axios.get('https://ultraregin-be-vs7vz.ondigitalocean.app/api/users/'+response.data.user.id+'?populate=*', {
+          headers: {
+            Authorization:
+              'Bearer '+ bearer_token,
+          }});
+        console.log(isStudent);
+        setIsLoggedIn(true);
+        if(isStudent.data.role.name === "Students"){
+          setIsLoggedIn(true);
+          $gameSystem.loginData = response.data.user;
+        }else{
+          setIsLoggedIn(false);
+        }
         return response.data.jwt;
       }).catch(error => {
-        console.log('An error occurred:', error.response);
-        loginID = "";
-        $gameVariables.setValue(3,loginID);
-        $gameVariables.setValue(4,error.response.status);
+        console.log('An error occurred:', error);
+        setIsLoggedIn(false);
       });
 
     }
 
+    
 
 //=====================================================
       uploadScores = async function(levelid, playerid, questions_attempted, questions_correct, assignment_score_composition){
