@@ -148,7 +148,7 @@
       $gameSystem.assignmentScoreCompositionData = assignmentScoreCompositionResult;
       $gameSystem.levelData = levelResult; 
       $gameSystem.levelQuestionCompositionData = levelQuestionCompositionResult; 
-      $gameSystem.questionData = questionResult;
+      //$gameSystem.questionData = questionResult;
       $gameSystem.scoreData = scoreResult;
       $gameSystem.userData = userResult;
       $gameSystem.worldData = worldResult;
@@ -159,31 +159,31 @@
       console.log($gameSystem.assignmentScoreCompositionData);
       console.log($gameSystem.levelData); 
       console.log($gameSystem.levelQuestionCompositionData); 
-      console.log("Question data",$gameSystem.questionData);
+      //console.log("Question data",$gameSystem.questionData);
       console.log($gameSystem.scoreData);
       console.log($gameSystem.userData);
       console.log($gameSystem.worldData);
       console.log($gameSystem.worldLevelCompositionData); 
-      let randomArrayUsed = [];
-      let questionList = [];
-      let maxRand = $gameSystem.questionData.data.length;
-      let jsonData = {};
-      while(randomArrayUsed.length < 9){
-        let randomIndex = Math.floor(Math.random() * maxRand);
-        if(!randomArrayUsed.includes(randomIndex)){
-          console.log($gameSystem.questionData.data[randomIndex]);
-          jsonData = {
-            description: $gameSystem.questionData.data[randomIndex].attributes.description,
-            fake_answers: ($gameSystem.questionData.data[randomIndex].attributes.fake_answers).split(','),
-            actual_answer: $gameSystem.questionData.data[randomIndex].attributes.actual_answer,
-          }
-          console.log(jsonData);
-          randomArrayUsed.push(randomIndex);
-          questionList.push(jsonData);
-        }
+      // let randomArrayUsed = [];
+      // let questionList = [];
+      // let maxRand = $gameSystem.questionData.data.length;
+      // let jsonData = {};
+      // while(randomArrayUsed.length < 9){
+      //   let randomIndex = Math.floor(Math.random() * maxRand);
+      //   if(!randomArrayUsed.includes(randomIndex)){
+      //     console.log($gameSystem.questionData.data[randomIndex]);
+      //     jsonData = {
+      //       description: $gameSystem.questionData.data[randomIndex].attributes.description,
+      //       fake_answers: ($gameSystem.questionData.data[randomIndex].attributes.fake_answers).split(','),
+      //       actual_answer: $gameSystem.questionData.data[randomIndex].attributes.actual_answer,
+      //     }
+      //     console.log(jsonData);
+      //     randomArrayUsed.push(randomIndex);
+      //     questionList.push(jsonData);
+      //   }
         
-      }
-      $gameSystem.internalQuestionData = questionList;
+      // }
+      $gameSystem.internalQuestionData = questionResult;
       console.log($gameSystem.internalQuestionData);
 
   }
@@ -359,25 +359,103 @@
 
     }
 
+    // getQuestion = async function(){   
+    //   console.log("getQuestion has been called");
+    //   await axios.get('https://ultraregin-be-vs7vz.ondigitalocean.app/api/questions', {
+    //   headers: {
+    //     Authorization:
+    //       'Bearer '+ bearer_token,
+    //   },
+    // }).then(response => {
+    //   console.log("RESPONSE: "+response.status);
+    //   questionResult = response.data;
+    //   return response.data;
+    // }).catch(error => {
+    //   console.log("RESPONSE: "+error.response.status);
+    //   console.log('An error occurred:', error.response);
+    //   loginID = "";
+    //   $gameVariables.setValue(4,error.response.status);
+    // });
+
+    // }
+
     getQuestion = async function(){   
-      console.log("getQuestion has been called");
-      await axios.get('https://ultraregin-be-vs7vz.ondigitalocean.app/api/questions', {
+      console.log("getQuestion has been called, loading world 1");
+    levelList = []
+    temp = []
+    tempQuestionList = []
+    worldquestioncomposition = await axios.get('https://ultraregin-be-vs7vz.ondigitalocean.app/api/world-question-compositions?populate=*', {
       headers: {
         Authorization:
           'Bearer '+ bearer_token,
       },
-    }).then(response => {
-      console.log("RESPONSE: "+response.status);
-      questionResult = response.data;
-      return response.data;
-    }).catch(error => {
-      console.log("RESPONSE: "+error.response.status);
-      console.log('An error occurred:', error.response);
-      loginID = "";
-      $gameVariables.setValue(4,error.response.status);
     });
+    console.log(worldquestioncomposition);
+    for (let i = 0; i < worldquestioncomposition.data.data.length; i++){
+      if(worldquestioncomposition.data.data[i].attributes.world.data.id == 1){
+        levelList[worldquestioncomposition.data.data[i].attributes.level_position -1] = worldquestioncomposition.data.data[i].attributes.level.data.id;
+      }
+    }
+    console.log(levelList);
+
+    questionQuery = await axios.get('https://ultraregin-be-vs7vz.ondigitalocean.app/api/level-question-compositions?populate=*', {
+      headers: {
+        Authorization:
+          'Bearer '+ bearer_token,
+      },
+    });
+    console.log(questionQuery.data.data);
+    arrayCopy = [...questionQuery.data.data];
+    //console.log(arrayCopy[11].attributes.level.data.id);
+    // for (let i = 0; i < arrayCopy.length; i++){
+    //   console.log("id,",i);
+    //   console.log(arrayCopy[i].attributes.level.data.id);
+    // }
+    temp[0] = [...arrayCopy.filter(x => x.attributes.level.data != null && x.attributes.level.data.id == levelList[0])];
+    temp[1] = [...arrayCopy.filter(x => x.attributes.level.data != null && x.attributes.level.data.id == levelList[1])];
+    temp[2] = [...arrayCopy.filter(x => x.attributes.level.data != null && x.attributes.level.data.id == levelList[2])];
+    
+    console.log(temp);
+    //1st level
+    console.log(temp[0].find(element => element.attributes.question_position == 1));
+
+    for(let levelIndex = 0; levelIndex < temp.length; levelIndex++){
+      for(let questionIndex = 0; questionIndex < 3; questionIndex++){
+        console.log((levelIndex*3)+(questionIndex));
+        item = temp[levelIndex].find(element => element.attributes.question_position == (questionIndex+1))
+        jsonData = {
+          description: item.attributes.question.data.attributes.description,
+          fake_answers: (item.attributes.question.data.attributes.fake_answers).split(','),
+          actual_answer: item.attributes.question.data.attributes.actual_answer,
+        }
+        tempQuestionList[(levelIndex*3)+(questionIndex)] = jsonData
+      }
+    }
+    questionResult = tempQuestionList;
+    console.log(questionResult);
+
+    //console.log(questionQuery.data.data.filter(x => x.level.data.id == 6));
+    //   await axios.get('https://ultraregin-be-vs7vz.ondigitalocean.app/api/questions', {
+    //   headers: {
+    //     Authorization:
+    //       'Bearer '+ bearer_token,
+    //   },
+    // }).then(response => {
+    //   console.log("RESPONSE: "+response.status);
+    //   questionResult = response.data;
+    //   return response.data;
+    // }).catch(error => {
+    //   console.log("RESPONSE: "+error.response.status);
+    //   console.log('An error occurred:', error.response);
+    //   loginID = "";
+    //   $gameVariables.setValue(4,error.response.status);
+    // });
 
     }
+
+
+
+
 
     getScore = async function(){   
       console.log("getScore has been called");
