@@ -1,0 +1,46 @@
+{
+    "users" : [
+    {
+        "username" : "professor1",
+        "password" : "professor1",
+        "email" : "professor1@school.com",
+        "confirmed" : true,
+        "blocked" : false
+    },
+    {
+        "username" : "professor2",
+        "password" : "professor2",
+        "email" : "professor2@school.com",
+        "confirmed" : false,
+        "blocked" : false
+    },
+    {
+        "username" : "professor3",
+        "password" : "professor3",
+        "email" : "professor3@school.com",
+        "confirmed" : true,
+        "blocked" : true
+    },
+    {
+        "username" : "student1",
+        "password" : "student1",
+        "email" : "student1@school.com",
+        "confirmed" : true,
+        "blocked" : false
+    },
+    {
+        "username" : "student2",
+        "password" : "student2",
+        "email" : "student2@school.com",
+        "confirmed" : false,
+        "blocked" : false
+    },
+    {
+        "username" : "student3",
+        "password" : "student3",
+        "email" : "student3@school.com",
+        "confirmed" : true,
+        "blocked" : true
+    }
+    ]
+}
