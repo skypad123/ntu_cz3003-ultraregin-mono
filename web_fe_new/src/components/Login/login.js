@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import {Routes, Route}
 from 'react-router-dom';
+import ultrareign_logo from './ultrareign-logo.JPG';
 
 const Login = (props) => {
     const [password,setPassword] = useState("");
@@ -16,15 +17,24 @@ const Login = (props) => {
         setIdentifier(value);
     }
 
+    function handleUserChosen(value){
+        console.log(value);
+    }
+
     return (
         <>
         <section>
             <div class="container-login">
                 <div class="card mt-3 border-0">
-                    <img src="img/ultrareign-logo.jpg" width="300" height="300" class="img-center"></img>
+                    <img src={ultrareign_logo} width="300" height="300" class="img-center" alt="ultrareign_logo"></img>
                 </div>    
 
                 <div class="user-details-container">
+                    <div class="d-grid" onChange={(x) => {handleUserChosen(x.target.value)}} >
+                        <label><input type="radio" name="user" id="btn-student" value="student" /> STUDENT </label>
+                        <label><input type="radio" name="user" id="btn-professor" value="professor" /> PROFESSOR </label>
+                      </div>
+
                       <div class="user-input">
                           <span class="input-group-text"> <i class="fas fa-user"></i> </span>
                           <input name="username" class="form-control" placeholder="User name" type="text" onChange={(x)=>{handleIdentifierChange(x.target.value)}} required></input>
@@ -36,7 +46,7 @@ const Login = (props) => {
                       </div> 
 
                       <div class="d-grid">
-                        <input type="button" class="btn" id="btn-login" onClick={()=>{props.onEmailSignIn(identifier,password)}} value="LOGIN"></input>
+                        <input type="button" class="btn" id="btn-login" style={{marginRight:"10px"}} onClick={()=>{props.onEmailSignIn(identifier,password)}} value="LOGIN"></input>
                         <Link to="/Facebook">
                             <input type="button" class="btn" id="btn-login" value="LOGIN by Facebook"></input>                      
                         </Link>                        
