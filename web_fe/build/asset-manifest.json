@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.424fe06f.css",
+    "main.js": "/static/js/main.d4d2ef6e.js",
+    "static/js/787.f9656b10.chunk.js": "/static/js/787.f9656b10.chunk.js",
+    "static/media/sidebar-logo.JPG": "/static/media/sidebar-logo.04a902a69a5f6d41dc93.JPG",
+    "static/media/ultrareign-logo.JPG": "/static/media/ultrareign-logo.ec4fd505a150fde35c0d.JPG",
+    "index.html": "/index.html",
+    "main.424fe06f.css.map": "/static/css/main.424fe06f.css.map",
+    "main.d4d2ef6e.js.map": "/static/js/main.d4d2ef6e.js.map",
+    "787.f9656b10.chunk.js.map": "/static/js/787.f9656b10.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.424fe06f.css",
+    "static/js/main.d4d2ef6e.js"
+  ]
+}
