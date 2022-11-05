@@ -52,6 +52,9 @@
  * @command saveVerify
  * @desc saveVerify
  * 
+ * @command uploadScores
+ * @desc uploadScores
+ * 
  */
 
 (() => {
@@ -239,21 +242,22 @@
 
     }
 
-    
 
 //=====================================================
-      uploadScores = async function(levelid, playerid, questions_attempted, questions_correct, assignment_score_composition){
-        console.log(levelid, playerid, questions_attempted, questions_correct, assignment_score_composition);
+      uploadScores = async function(){
+        //console.log(levelid, playerid, questions_attempted, questions_correct, assignment_score_composition);
         console.log("uploadScores has been called");
         console.log(bearer_token);
+
         const bodyparams = JSON.stringify({
           "data": {
-            "level": levelid,
-            "player": playerid,
-            "questions_attempted": questions_attempted,
-            "questions_correct": questions_correct
+            "level": 6,
+            "player": $gameSystem.loginData.id,
+            "questions_attempted": 9,
+            "questions_correct": 9
           }
         });
+        
         const bearerparams = {
             "Authorization": 'Bearer '+ bearer_token,
             "Content-Type": "application/json" 
@@ -603,6 +607,11 @@
 
     PluginManager.registerCommand("zen", "saveVerify", () => {
       saveVerify();
+      
+    });
+
+    PluginManager.registerCommand("zen", "uploadScores", () => {
+      uploadScores();
       
     });
 
