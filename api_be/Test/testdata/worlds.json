@@ -1,0 +1,10 @@
+{
+    "worlds":[
+        {
+            "name" : "CZ1060 Mathematic For Kids (world 1)", 
+            "description" : "Dolor magna eget est lorem ipsum. Lacus sed viverra tellus in hac habitasse platea dictumst vestibulum. Faucibus pulvinar elementum integer enim neque volutpat ac tincidunt vitae. Purus gravida quis blandit turpis cursus in. Cursus vitae congue mauris rhoncus aenean. Quam viverra orci sagittis eu volutpat odio. Elementum nisi quis eleifend quam adipiscing. At volutpat diam ut venenatis tellus. Massa enim nec dui nunc mattis enim ut tellus. Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien. Varius sit amet mattis vulputate enim. Libero volutpat sed cras ornare arcu. Faucibus vitae aliquet nec ullamcorper sit amet risus nullam eget.", 
+            "level_count" : 3, 
+            "creator": "professor1"       
+        }
+    ]
+}
