@@ -1,0 +1,148 @@
+INSERT INTO ultrareigndb.admin_permissions (`action`,subject,properties,conditions,created_at,updated_at,created_by_id,updated_by_id) VALUES
+	 ('plugin::upload.read',NULL,'{}','[]','2022-09-08 23:21:34.481000000','2022-09-08 23:21:34.481000000',NULL,NULL),
+	 ('plugin::upload.assets.create',NULL,'{}','[]','2022-09-08 23:21:34.496000000','2022-09-08 23:21:34.496000000',NULL,NULL),
+	 ('plugin::upload.assets.update',NULL,'{}','[]','2022-09-08 23:21:34.511000000','2022-09-08 23:21:34.511000000',NULL,NULL),
+	 ('plugin::upload.assets.download',NULL,'{}','[]','2022-09-08 23:21:34.529000000','2022-09-08 23:21:34.529000000',NULL,NULL),
+	 ('plugin::upload.assets.copy-link',NULL,'{}','[]','2022-09-08 23:21:34.545000000','2022-09-08 23:21:34.545000000',NULL,NULL),
+	 ('plugin::upload.read',NULL,'{}','["admin::is-creator"]','2022-09-08 23:21:34.565000000','2022-09-08 23:21:34.565000000',NULL,NULL),
+	 ('plugin::upload.assets.create',NULL,'{}','[]','2022-09-08 23:21:34.582000000','2022-09-08 23:21:34.582000000',NULL,NULL),
+	 ('plugin::upload.assets.update',NULL,'{}','["admin::is-creator"]','2022-09-08 23:21:34.595000000','2022-09-08 23:21:34.595000000',NULL,NULL),
+	 ('plugin::upload.assets.download',NULL,'{}','[]','2022-09-08 23:21:34.615000000','2022-09-08 23:21:34.615000000',NULL,NULL),
+	 ('plugin::upload.assets.copy-link',NULL,'{}','[]','2022-09-08 23:21:34.631000000','2022-09-08 23:21:34.631000000',NULL,NULL);
+INSERT INTO ultrareigndb.admin_permissions (`action`,subject,properties,conditions,created_at,updated_at,created_by_id,updated_by_id) VALUES
+	 ('plugin::content-manager.explorer.create','plugin::users-permissions.user','{"fields": ["username", "email", "provider", "password", "resetPasswordToken", "confirmationToken", "confirmed", "blocked", "role"]}','[]','2022-09-08 23:21:34.680000000','2022-09-08 23:21:34.680000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.read','plugin::users-permissions.user','{"fields": ["username", "email", "provider", "password", "resetPasswordToken", "confirmationToken", "confirmed", "blocked", "role"]}','[]','2022-09-08 23:21:34.693000000','2022-09-08 23:21:34.693000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.update','plugin::users-permissions.user','{"fields": ["username", "email", "provider", "password", "resetPasswordToken", "confirmationToken", "confirmed", "blocked", "role"]}','[]','2022-09-08 23:21:34.707000000','2022-09-08 23:21:34.707000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.delete','plugin::users-permissions.user','{}','[]','2022-09-08 23:21:34.724000000','2022-09-08 23:21:34.724000000',NULL,NULL),
+	 ('plugin::content-manager.single-types.configure-view',NULL,'{}','[]','2022-09-08 23:21:34.743000000','2022-09-08 23:21:34.743000000',NULL,NULL),
+	 ('plugin::content-manager.collection-types.configure-view',NULL,'{}','[]','2022-09-08 23:21:34.757000000','2022-09-08 23:21:34.757000000',NULL,NULL),
+	 ('plugin::content-manager.components.configure-layout',NULL,'{}','[]','2022-09-08 23:21:34.772000000','2022-09-08 23:21:34.772000000',NULL,NULL),
+	 ('plugin::content-type-builder.read',NULL,'{}','[]','2022-09-08 23:21:34.790000000','2022-09-08 23:21:34.790000000',NULL,NULL),
+	 ('plugin::email.settings.read',NULL,'{}','[]','2022-09-08 23:21:34.805000000','2022-09-08 23:21:34.805000000',NULL,NULL),
+	 ('plugin::upload.read',NULL,'{}','[]','2022-09-08 23:21:34.820000000','2022-09-08 23:21:34.820000000',NULL,NULL);
+INSERT INTO ultrareigndb.admin_permissions (`action`,subject,properties,conditions,created_at,updated_at,created_by_id,updated_by_id) VALUES
+	 ('plugin::upload.assets.create',NULL,'{}','[]','2022-09-08 23:21:34.846000000','2022-09-08 23:21:34.846000000',NULL,NULL),
+	 ('plugin::upload.assets.update',NULL,'{}','[]','2022-09-08 23:21:34.869000000','2022-09-08 23:21:34.869000000',NULL,NULL),
+	 ('plugin::upload.assets.download',NULL,'{}','[]','2022-09-08 23:21:34.883000000','2022-09-08 23:21:34.883000000',NULL,NULL),
+	 ('plugin::upload.assets.copy-link',NULL,'{}','[]','2022-09-08 23:21:34.903000000','2022-09-08 23:21:34.903000000',NULL,NULL),
+	 ('plugin::upload.settings.read',NULL,'{}','[]','2022-09-08 23:21:34.918000000','2022-09-08 23:21:34.918000000',NULL,NULL),
+	 ('plugin::users-permissions.roles.create',NULL,'{}','[]','2022-09-08 23:21:34.931000000','2022-09-08 23:21:34.931000000',NULL,NULL),
+	 ('plugin::users-permissions.roles.read',NULL,'{}','[]','2022-09-08 23:21:34.946000000','2022-09-08 23:21:34.946000000',NULL,NULL),
+	 ('plugin::users-permissions.roles.update',NULL,'{}','[]','2022-09-08 23:21:34.961000000','2022-09-08 23:21:34.961000000',NULL,NULL),
+	 ('plugin::users-permissions.roles.delete',NULL,'{}','[]','2022-09-08 23:21:34.976000000','2022-09-08 23:21:34.976000000',NULL,NULL),
+	 ('plugin::users-permissions.providers.read',NULL,'{}','[]','2022-09-08 23:21:34.992000000','2022-09-08 23:21:34.992000000',NULL,NULL);
+INSERT INTO ultrareigndb.admin_permissions (`action`,subject,properties,conditions,created_at,updated_at,created_by_id,updated_by_id) VALUES
+	 ('plugin::users-permissions.providers.update',NULL,'{}','[]','2022-09-08 23:21:35.007000000','2022-09-08 23:21:35.007000000',NULL,NULL),
+	 ('plugin::users-permissions.email-templates.read',NULL,'{}','[]','2022-09-08 23:21:35.021000000','2022-09-08 23:21:35.021000000',NULL,NULL),
+	 ('plugin::users-permissions.email-templates.update',NULL,'{}','[]','2022-09-08 23:21:35.034000000','2022-09-08 23:21:35.034000000',NULL,NULL),
+	 ('plugin::users-permissions.advanced-settings.read',NULL,'{}','[]','2022-09-08 23:21:35.049000000','2022-09-08 23:21:35.049000000',NULL,NULL),
+	 ('plugin::users-permissions.advanced-settings.update',NULL,'{}','[]','2022-09-08 23:21:35.068000000','2022-09-08 23:21:35.068000000',NULL,NULL),
+	 ('plugin::i18n.locale.create',NULL,'{}','[]','2022-09-08 23:21:35.084000000','2022-09-08 23:21:35.084000000',NULL,NULL),
+	 ('plugin::i18n.locale.read',NULL,'{}','[]','2022-09-08 23:21:35.098000000','2022-09-08 23:21:35.098000000',NULL,NULL),
+	 ('plugin::i18n.locale.update',NULL,'{}','[]','2022-09-08 23:21:35.112000000','2022-09-08 23:21:35.112000000',NULL,NULL),
+	 ('plugin::i18n.locale.delete',NULL,'{}','[]','2022-09-08 23:21:35.128000000','2022-09-08 23:21:35.128000000',NULL,NULL),
+	 ('admin::marketplace.read',NULL,'{}','[]','2022-09-08 23:21:35.141000000','2022-09-08 23:21:35.141000000',NULL,NULL);
+INSERT INTO ultrareigndb.admin_permissions (`action`,subject,properties,conditions,created_at,updated_at,created_by_id,updated_by_id) VALUES
+	 ('admin::marketplace.plugins.install',NULL,'{}','[]','2022-09-08 23:21:35.155000000','2022-09-08 23:21:35.155000000',NULL,NULL),
+	 ('admin::marketplace.plugins.uninstall',NULL,'{}','[]','2022-09-08 23:21:35.171000000','2022-09-08 23:21:35.171000000',NULL,NULL),
+	 ('admin::webhooks.create',NULL,'{}','[]','2022-09-08 23:21:35.187000000','2022-09-08 23:21:35.187000000',NULL,NULL),
+	 ('admin::webhooks.read',NULL,'{}','[]','2022-09-08 23:21:35.208000000','2022-09-08 23:21:35.208000000',NULL,NULL),
+	 ('admin::webhooks.update',NULL,'{}','[]','2022-09-08 23:21:35.224000000','2022-09-08 23:21:35.224000000',NULL,NULL),
+	 ('admin::webhooks.delete',NULL,'{}','[]','2022-09-08 23:21:35.244000000','2022-09-08 23:21:35.244000000',NULL,NULL),
+	 ('admin::users.create',NULL,'{}','[]','2022-09-08 23:21:35.258000000','2022-09-08 23:21:35.258000000',NULL,NULL),
+	 ('admin::users.read',NULL,'{}','[]','2022-09-08 23:21:35.274000000','2022-09-08 23:21:35.274000000',NULL,NULL),
+	 ('admin::users.update',NULL,'{}','[]','2022-09-08 23:21:35.288000000','2022-09-08 23:21:35.288000000',NULL,NULL),
+	 ('admin::users.delete',NULL,'{}','[]','2022-09-08 23:21:35.304000000','2022-09-08 23:21:35.304000000',NULL,NULL);
+INSERT INTO ultrareigndb.admin_permissions (`action`,subject,properties,conditions,created_at,updated_at,created_by_id,updated_by_id) VALUES
+	 ('admin::roles.create',NULL,'{}','[]','2022-09-08 23:21:35.317000000','2022-09-08 23:21:35.317000000',NULL,NULL),
+	 ('admin::roles.read',NULL,'{}','[]','2022-09-08 23:21:35.331000000','2022-09-08 23:21:35.331000000',NULL,NULL),
+	 ('admin::roles.update',NULL,'{}','[]','2022-09-08 23:21:35.345000000','2022-09-08 23:21:35.345000000',NULL,NULL),
+	 ('admin::roles.delete',NULL,'{}','[]','2022-09-08 23:21:35.358000000','2022-09-08 23:21:35.358000000',NULL,NULL),
+	 ('admin::api-tokens.create',NULL,'{}','[]','2022-09-08 23:21:35.373000000','2022-09-08 23:21:35.373000000',NULL,NULL),
+	 ('admin::api-tokens.read',NULL,'{}','[]','2022-09-08 23:21:35.387000000','2022-09-08 23:21:35.387000000',NULL,NULL),
+	 ('admin::api-tokens.update',NULL,'{}','[]','2022-09-08 23:21:35.402000000','2022-09-08 23:21:35.402000000',NULL,NULL),
+	 ('admin::api-tokens.delete',NULL,'{}','[]','2022-09-08 23:21:35.418000000','2022-09-08 23:21:35.418000000',NULL,NULL),
+	 ('admin::project-settings.update',NULL,'{}','[]','2022-09-08 23:21:35.436000000','2022-09-08 23:21:35.436000000',NULL,NULL),
+	 ('admin::project-settings.read',NULL,'{}','[]','2022-09-08 23:21:35.451000000','2022-09-08 23:21:35.451000000',NULL,NULL);
+INSERT INTO ultrareigndb.admin_permissions (`action`,subject,properties,conditions,created_at,updated_at,created_by_id,updated_by_id) VALUES
+	 ('plugin::content-manager.explorer.delete','api::question.question','{}','[]','2022-09-12 11:24:42.662000000','2022-09-12 11:24:42.662000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.delete','api::level.level','{}','[]','2022-09-12 11:28:25.908000000','2022-09-12 11:28:25.908000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.create','api::world.world','{"fields": ["Name", "Description", "Level_Count", "Creator"]}','[]','2022-09-12 11:30:29.586000000','2022-09-12 11:30:29.586000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.read','api::world.world','{"fields": ["Name", "Description", "Level_Count", "Creator"]}','[]','2022-09-12 11:30:29.605000000','2022-09-12 11:30:29.605000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.update','api::world.world','{"fields": ["Name", "Description", "Level_Count", "Creator"]}','[]','2022-09-12 11:30:29.623000000','2022-09-12 11:30:29.623000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.delete','api::world.world','{}','[]','2022-09-12 11:30:29.642000000','2022-09-12 11:30:29.642000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.create','api::level.level','{"fields": ["name", "description", "question_count", "creator", "level_type"]}','[]','2022-09-12 11:32:02.827000000','2022-09-12 11:32:02.827000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.read','api::level.level','{"fields": ["name", "description", "question_count", "creator", "level_type"]}','[]','2022-09-12 11:32:03.043000000','2022-09-12 11:32:03.043000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.update','api::level.level','{"fields": ["name", "description", "question_count", "creator", "level_type"]}','[]','2022-09-12 11:32:03.069000000','2022-09-12 11:32:03.069000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.create','api::question.question','{"fields": ["name", "description", "fake_answers", "actual_answer", "creator"]}','[]','2022-09-12 11:32:47.788000000','2022-09-12 11:32:47.788000000',NULL,NULL);
+INSERT INTO ultrareigndb.admin_permissions (`action`,subject,properties,conditions,created_at,updated_at,created_by_id,updated_by_id) VALUES
+	 ('plugin::content-manager.explorer.read','api::question.question','{"fields": ["name", "description", "fake_answers", "actual_answer", "creator"]}','[]','2022-09-12 11:32:47.831000000','2022-09-12 11:32:47.831000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.update','api::question.question','{"fields": ["name", "description", "fake_answers", "actual_answer", "creator"]}','[]','2022-09-12 11:32:47.852000000','2022-09-12 11:32:47.852000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.create','api::level-question-composition.level-question-composition','{"fields": ["question", "level", "question_position"]}','[]','2022-09-12 11:37:14.095000000','2022-09-12 11:37:14.095000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.read','api::level-question-composition.level-question-composition','{"fields": ["question", "level", "question_position"]}','[]','2022-09-12 11:37:14.113000000','2022-09-12 11:37:14.113000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.update','api::level-question-composition.level-question-composition','{"fields": ["question", "level", "question_position"]}','[]','2022-09-12 11:37:14.131000000','2022-09-12 11:37:14.131000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.delete','api::level-question-composition.level-question-composition','{}','[]','2022-09-12 11:37:14.152000000','2022-09-12 11:37:14.152000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.delete','api::world-question-composition.world-question-composition','{}','[]','2022-09-12 11:39:06.228000000','2022-09-12 11:39:06.228000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.publish','api::world-question-composition.world-question-composition','{}','[]','2022-09-12 11:39:06.245000000','2022-09-12 11:39:06.245000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.create','api::world-question-composition.world-question-composition','{"fields": ["level", "world", "level_position"]}','[]','2022-09-12 11:40:19.479000000','2022-09-12 11:40:19.479000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.read','api::world-question-composition.world-question-composition','{"fields": ["level", "world", "level_position"]}','[]','2022-09-12 11:40:19.503000000','2022-09-12 11:40:19.503000000',NULL,NULL);
+INSERT INTO ultrareigndb.admin_permissions (`action`,subject,properties,conditions,created_at,updated_at,created_by_id,updated_by_id) VALUES
+	 ('plugin::content-manager.explorer.update','api::world-question-composition.world-question-composition','{"fields": ["level", "world", "level_position"]}','[]','2022-09-12 11:40:19.522000000','2022-09-12 11:40:19.522000000',NULL,NULL),
+	 ('plugin::documentation.read',NULL,'{}','[]','2022-09-12 11:41:49.720000000','2022-09-12 11:41:49.720000000',NULL,NULL),
+	 ('plugin::documentation.settings.update',NULL,'{}','[]','2022-09-12 11:41:49.743000000','2022-09-12 11:41:49.743000000',NULL,NULL),
+	 ('plugin::documentation.settings.regenerate',NULL,'{}','[]','2022-09-12 11:41:49.764000000','2022-09-12 11:41:49.764000000',NULL,NULL),
+	 ('plugin::documentation.settings.read',NULL,'{}','[]','2022-09-12 11:41:49.782000000','2022-09-12 11:41:49.782000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.delete','api::score.score','{}','[]','2022-09-12 11:47:35.331000000','2022-09-12 11:47:35.331000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.delete','api::assignment.assignment','{}','[]','2022-09-12 11:57:04.196000000','2022-09-12 11:57:04.196000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.delete','api::assignment-score-composition.assignment-score-composition','{}','[]','2022-09-12 11:59:03.504000000','2022-09-12 11:59:03.504000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.create','api::assignment-score-composition.assignment-score-composition','{"fields": ["assignment", "scores"]}','[]','2022-09-12 12:00:20.980000000','2022-09-12 12:00:20.980000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.create','api::score.score','{"fields": ["level", "player", "questions_attempted", "questions_correct", "assignment_score_composition"]}','[]','2022-09-12 12:00:21.004000000','2022-09-12 12:00:21.004000000',NULL,NULL);
+INSERT INTO ultrareigndb.admin_permissions (`action`,subject,properties,conditions,created_at,updated_at,created_by_id,updated_by_id) VALUES
+	 ('plugin::content-manager.explorer.read','api::assignment-score-composition.assignment-score-composition','{"fields": ["assignment", "scores"]}','[]','2022-09-12 12:00:21.022000000','2022-09-12 12:00:21.022000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.read','api::score.score','{"fields": ["level", "player", "questions_attempted", "questions_correct", "assignment_score_composition"]}','[]','2022-09-12 12:00:21.041000000','2022-09-12 12:00:21.041000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.update','api::assignment-score-composition.assignment-score-composition','{"fields": ["assignment", "scores"]}','[]','2022-09-12 12:00:21.063000000','2022-09-12 12:00:21.063000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.update','api::score.score','{"fields": ["level", "player", "questions_attempted", "questions_correct", "assignment_score_composition"]}','[]','2022-09-12 12:00:21.081000000','2022-09-12 12:00:21.081000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.create','api::assignment.assignment','{"fields": ["world", "student", "level_completed", "assignment_score_composition"]}','[]','2022-09-12 12:00:53.348000000','2022-09-12 12:00:53.348000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.read','api::assignment.assignment','{"fields": ["world", "student", "level_completed", "assignment_score_composition"]}','[]','2022-09-12 12:00:53.368000000','2022-09-12 12:00:53.368000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.update','api::assignment.assignment','{"fields": ["world", "student", "level_completed", "assignment_score_composition"]}','[]','2022-09-12 12:00:53.399000000','2022-09-12 12:00:53.399000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.create','plugin::users-permissions.user','{"fields": ["blocked", "confirmationToken", "confirmed", "email", "password", "provider", "resetPasswordToken", "role", "username"]}','[]','2022-09-12 11:32:45.171000000','2022-09-12 11:32:45.171000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.read','plugin::users-permissions.user','{"fields": ["blocked", "confirmationToken", "confirmed", "email", "password", "provider", "resetPasswordToken", "role", "username"]}','[]','2022-09-12 11:32:45.186000000','2022-09-12 11:32:45.186000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.update','plugin::users-permissions.user','{"fields": ["blocked", "confirmationToken", "confirmed", "email", "password", "provider", "resetPasswordToken", "role", "username"]}','[]','2022-09-12 11:32:45.195000000','2022-09-12 11:32:45.195000000',NULL,NULL);
+INSERT INTO ultrareigndb.admin_permissions (`action`,subject,properties,conditions,created_at,updated_at,created_by_id,updated_by_id) VALUES
+	 ('plugin::content-manager.explorer.delete','plugin::users-permissions.user','{}','[]','2022-09-12 11:32:45.204000000','2022-09-12 11:32:45.204000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.create','api::assignment.assignment','{"fields": ["assignment_score_composition", "level_completed", "student", "world"]}','[]','2022-09-12 11:32:45.216000000','2022-09-12 11:32:45.216000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.read','api::assignment.assignment','{"fields": ["assignment_score_composition", "level_completed", "student", "world"]}','[]','2022-09-12 11:32:45.227000000','2022-09-12 11:32:45.227000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.update','api::assignment.assignment','{"fields": ["assignment_score_composition", "level_completed", "student", "world"]}','[]','2022-09-12 11:32:45.237000000','2022-09-12 11:32:45.237000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.delete','api::assignment.assignment','{}','[]','2022-09-12 11:32:45.247000000','2022-09-12 11:32:45.247000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.create','api::assignment-score-composition.assignment-score-composition','{"fields": ["assignment", "scores"]}','[]','2022-09-12 11:32:45.257000000','2022-09-12 11:32:45.257000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.read','api::assignment-score-composition.assignment-score-composition','{"fields": ["assignment", "scores"]}','[]','2022-09-12 11:32:45.268000000','2022-09-12 11:32:45.268000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.update','api::assignment-score-composition.assignment-score-composition','{"fields": ["assignment", "scores"]}','[]','2022-09-12 11:32:45.279000000','2022-09-12 11:32:45.279000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.delete','api::assignment-score-composition.assignment-score-composition','{}','[]','2022-09-12 11:32:45.295000000','2022-09-12 11:32:45.295000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.create','api::level.level','{"fields": ["creator", "description", "level_type", "name", "question_count"]}','[]','2022-09-12 11:32:45.307000000','2022-09-12 11:32:45.307000000',NULL,NULL);
+INSERT INTO ultrareigndb.admin_permissions (`action`,subject,properties,conditions,created_at,updated_at,created_by_id,updated_by_id) VALUES
+	 ('plugin::content-manager.explorer.read','api::level.level','{"fields": ["creator", "description", "level_type", "name", "question_count"]}','[]','2022-09-12 11:32:45.315000000','2022-09-12 11:32:45.315000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.update','api::level.level','{"fields": ["creator", "description", "level_type", "name", "question_count"]}','[]','2022-09-12 11:32:45.327000000','2022-09-12 11:32:45.327000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.delete','api::level.level','{}','[]','2022-09-12 11:32:45.338000000','2022-09-12 11:32:45.338000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.create','api::level-question-composition.level-question-composition','{"fields": ["level", "question", "question_position"]}','[]','2022-09-12 11:32:45.349000000','2022-09-12 11:32:45.349000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.read','api::level-question-composition.level-question-composition','{"fields": ["level", "question", "question_position"]}','[]','2022-09-12 11:32:45.359000000','2022-09-12 11:32:45.359000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.update','api::level-question-composition.level-question-composition','{"fields": ["level", "question", "question_position"]}','[]','2022-09-12 11:32:45.371000000','2022-09-12 11:32:45.371000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.delete','api::level-question-composition.level-question-composition','{}','[]','2022-09-12 11:32:45.381000000','2022-09-12 11:32:45.381000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.create','api::question.question','{"fields": ["actual_answer", "creator", "description", "fake_answers", "name"]}','[]','2022-09-12 11:32:45.394000000','2022-09-12 11:32:45.394000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.read','api::question.question','{"fields": ["actual_answer", "creator", "description", "fake_answers", "name"]}','[]','2022-09-12 11:32:45.407000000','2022-09-12 11:32:45.407000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.update','api::question.question','{"fields": ["actual_answer", "creator", "description", "fake_answers", "name"]}','[]','2022-09-12 11:32:45.418000000','2022-09-12 11:32:45.418000000',NULL,NULL);
+INSERT INTO ultrareigndb.admin_permissions (`action`,subject,properties,conditions,created_at,updated_at,created_by_id,updated_by_id) VALUES
+	 ('plugin::content-manager.explorer.delete','api::question.question','{}','[]','2022-09-12 11:32:45.428000000','2022-09-12 11:32:45.428000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.create','api::score.score','{"fields": ["assignment_score_composition", "level", "player", "questions_attempted", "questions_correct"]}','[]','2022-09-12 11:32:45.439000000','2022-09-12 11:32:45.439000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.read','api::score.score','{"fields": ["assignment_score_composition", "level", "player", "questions_attempted", "questions_correct"]}','[]','2022-09-12 11:32:45.448000000','2022-09-12 11:32:45.448000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.update','api::score.score','{"fields": ["assignment_score_composition", "level", "player", "questions_attempted", "questions_correct"]}','[]','2022-09-12 11:32:45.461000000','2022-09-12 11:32:45.461000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.delete','api::score.score','{}','[]','2022-09-12 11:32:45.481000000','2022-09-12 11:32:45.481000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.create','api::world.world','{"fields": ["Creator", "Description", "Level_Count", "Name"]}','[]','2022-09-12 11:32:45.494000000','2022-09-12 11:32:45.494000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.read','api::world.world','{"fields": ["Creator", "Description", "Level_Count", "Name"]}','[]','2022-09-12 11:32:45.505000000','2022-09-12 11:32:45.505000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.update','api::world.world','{"fields": ["Creator", "Description", "Level_Count", "Name"]}','[]','2022-09-12 11:32:45.517000000','2022-09-12 11:32:45.517000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.delete','api::world.world','{}','[]','2022-09-12 11:32:45.527000000','2022-09-12 11:32:45.527000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.create','api::world-question-composition.world-question-composition','{"fields": ["level", "level_position", "world"]}','[]','2022-09-12 11:32:45.538000000','2022-09-12 11:32:45.538000000',NULL,NULL);
+INSERT INTO ultrareigndb.admin_permissions (`action`,subject,properties,conditions,created_at,updated_at,created_by_id,updated_by_id) VALUES
+	 ('plugin::content-manager.explorer.read','api::world-question-composition.world-question-composition','{"fields": ["level", "level_position", "world"]}','[]','2022-09-12 11:32:45.551000000','2022-09-12 11:32:45.551000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.update','api::world-question-composition.world-question-composition','{"fields": ["level", "level_position", "world"]}','[]','2022-09-12 11:32:45.562000000','2022-09-12 11:32:45.562000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.delete','api::world-question-composition.world-question-composition','{}','[]','2022-09-12 11:32:45.575000000','2022-09-12 11:32:45.575000000',NULL,NULL),
+	 ('plugin::content-manager.explorer.publish','api::world-question-composition.world-question-composition','{}','[]','2022-09-12 11:32:45.586000000','2022-09-12 11:32:45.586000000',NULL,NULL);

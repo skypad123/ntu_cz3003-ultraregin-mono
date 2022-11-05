@@ -1,0 +1,6 @@
+INSERT INTO ultrareigndb.admin_users (firstname,lastname,username,email,password,reset_password_token,registration_token,is_active,blocked,prefered_language,created_at,updated_at,created_by_id,updated_by_id) VALUES
+	 ('Sky','Livingston',NULL,'skypad123@gmail.com','$2a$10$9XYTJjF9CWvikdXdwiNcduzIO1ECwuw4952cY5wHuhJVExYk6DelC',NULL,NULL,1,0,NULL,'2022-09-08 23:24:04.191000000','2022-09-08 23:24:04.191000000',NULL,NULL),
+	 ('Ernest','Tan',NULL,'etan073@e.ntu.edu.sg','$2a$10$noq2f4ZFlZix.nHcex8hde6qtisBOTmJMPc7RG9vJOpG1xEo9IGbG',NULL,NULL,1,0,NULL,'2022-09-12 11:34:38.259000000','2022-09-18 01:38:23.264000000',NULL,NULL),
+	 ('Sheryl','',NULL,'goht0033@e.ntu.edu.sg','$2a$10$dqXraRj4O7NSKviNSLMKrOoBrvUZmDCK/RgPUSwtGqD/4eHudIO66',NULL,NULL,1,0,NULL,'2022-09-12 11:35:21.815000000','2022-09-18 01:39:53.771000000',NULL,NULL),
+	 ('Lydia','',NULL,'nurlydia003@e.ntu.edu.sg','$2a$10$R0XnIKi7VBAeSJ38AElaZ.FhUYg.Jf7eP7.q.cnBlCFKRzWU75QsW',NULL,NULL,1,0,NULL,'2022-09-12 11:36:11.341000000','2022-09-12 14:55:27.922000000',NULL,NULL),
+	 ('Zen','Teh',NULL,'hteh002@e.ntu.edu.sg','$2a$10$yFskXPSa/ElTev1Q9VfaSe1jEzSVCfAkzWsDYLxfP5IY9fms6vIge',NULL,NULL,1,0,NULL,'2022-09-12 11:38:05','2022-09-13 14:55:05.591000000',NULL,NULL);
