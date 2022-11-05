@@ -1,14 +1,14 @@
 import React from "react";
 import {Nav, NavLink} from "./SideBarElements";
 import sidebar_logo from "./sidebar-logo.JPG";
-import { useLocation } from 'react-router-dom';
+import { matchPath, useLocation } from 'react-router-dom';
 
 const StudentSideBar = () => {
     return (
       <>
         <Nav>
             <img src={sidebar_logo} style={{width: '180px'}} alt="sidebar-logo" />
-            <NavLink to="/play" activeStyle>
+            <NavLink to="/play" activeStyle end>
               Play
             </NavLink>
             <NavLink to="/create" activeStyle>
@@ -17,12 +17,12 @@ const StudentSideBar = () => {
             <NavLink to="/read" activeStyle>
               Read
             </NavLink>
-            <NavLink to="/choose-update-questions" activeStyle>
+            <NavLink to="/update-questions" activeStyle>
               Update
             </NavLink>
-            <NavLink to="/choose-delete-questions" activeStyle>
+            {/* <NavLink to="/choose-delete-questions" activeStyle>
               Delete
-            </NavLink>
+            </NavLink> */}
             <NavLink to="/challenge" activeStyle>
               Challenge
             </NavLink>
@@ -34,6 +34,7 @@ const StudentSideBar = () => {
 
   const ProfessorSideBar = () => {
     const {pathname} = useLocation();
+    
     return (
       <>
         <Nav>
@@ -47,7 +48,7 @@ const StudentSideBar = () => {
             <NavLink to="/read" activeStyle>
               Read
             </NavLink>
-            <NavLink to="/choose-update-questions" isActive={() => ['/choose-update-questions', '/update-question'].includes(pathname)} activeStyle>
+            <NavLink to="/update-questions" activeStyle>
               Update
             </NavLink>
             <NavLink to="/choose-delete-questions" activeStyle>

@@ -17,15 +17,16 @@ const SummaryReport = () => {
     }, );
 
     const getStudentNames = () => {
-        axios.get('https://ultraregin-be-vs7vz.ondigitalocean.app/api/users', {
+        axios.get('https://ultraregin-be-vs7vz.ondigitalocean.app/api/users?populate=role', {
             headers:{
                 // contentType: 'application/json',
                 Authorization:
+                    // sessionStorage.getItem("jwt")
                     "Bearer 970b635e2c091a14bec6c5035e75577a6d2ade6e67c10f118e0ab4a880eb941297850b921e24723197effddef172a60f8e669ac6aeaf573ad57a4aa6dfcc4ac6965f3781053eb1fe06e2e8f19ad8bc01c470cceb3afd6fb2525dcbfbaa4bb16369357f78ae1bb750f04f5a30ec08986a4a88bebe2e01d861ba12a78ab1edb9a5",
             }, 
         })
         .then ((response) => {
-        // console.log(response.data)
+        console.log("THIS", response.data)
         const allStudentNames = response.data;
         setStudentNames(allStudentNames);
         })
@@ -33,7 +34,7 @@ const SummaryReport = () => {
 
     const handleStudentSelected = (studentUsername) => {
         navigate({
-            pathname: '/summary-report-student',
+            pathname: '/summary-report/student',
             search: createSearchParams({
                 user: studentUsername
             }).toString()
@@ -88,7 +89,9 @@ const SummaryReport = () => {
                             {
                                 studentNames.map(student => {
                                     return (
-                                        <option value={student.username}> {student.username} </option>
+                                        (student.role.name == "Students" ?
+                                        <option value={student.username}> {student.username} </option> : null
+                                        )
                                     )
                                 })
                             }

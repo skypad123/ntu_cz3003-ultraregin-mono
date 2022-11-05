@@ -21,6 +21,15 @@ const Login = (props) => {
         console.log(value);
     }
 
+    function handleSubmit(identifier, password){
+        if (!identifier || !password){
+            window.alert("Enter all fields!")
+        }
+        else {
+            props.onEmailSignIn(identifier,password)
+        }
+    }
+
     return (
         <>
         <section>
@@ -30,23 +39,24 @@ const Login = (props) => {
                 </div>    
 
                 <div class="user-details-container">
-                    <div class="d-grid" onChange={(x) => {handleUserChosen(x.target.value)}} >
+                    {/* <div class="d-grid" onChange={(x) => {handleUserChosen(x.target.value)}} >
                         <label><input type="radio" name="user" id="btn-student" value="student" /> STUDENT </label>
                         <label><input type="radio" name="user" id="btn-professor" value="professor" /> PROFESSOR </label>
-                      </div>
+                      </div> */}
 
                       <div class="user-input">
                           <span class="input-group-text"> <i class="fas fa-user"></i> </span>
-                          <input name="username" class="form-control" placeholder="User name" type="text" onChange={(x)=>{handleIdentifierChange(x.target.value)}} required></input>
+                          <input id="username" name="username" class="form-control" placeholder="User name" type="text" onChange={(x)=>{handleIdentifierChange(x.target.value)}} required></input>
                       </div> 
                   
                       <div class="user-input">
                           <span class="input-group-text"> <i class="fas fa-lock"></i> </span>
-                          <input class="form-control" name="password" placeholder="Password" type="password" onChange={(x)=>{handlePasswordChange(x.target.value)}} required></input>
+                          <input id="password" class="form-control" name="password" placeholder="Password" type="password" onChange={(x)=>{handlePasswordChange(x.target.value)}} required></input>
                       </div> 
 
                       <div class="d-grid">
-                        <input type="button" class="btn" id="btn-login" style={{marginRight:"10px"}} onClick={()=>{props.onEmailSignIn(identifier,password)}} value="LOGIN"></input>
+                        <input type="button" class="btn" id="btn-login" style={{marginRight:"10px"}} onClick={() => handleSubmit(identifier,password)} value="LOGIN"></input>
+                        {/* <input type="button" class="btn" id="btn-login" style={{marginRight:"10px"}} onClick={()=>{props.onEmailSignIn(identifier,password)}} value="LOGIN"></input> */}
                         <Link to="/Facebook">
                             <input type="button" class="btn" id="btn-login" value="LOGIN by Facebook"></input>                      
                         </Link>                        

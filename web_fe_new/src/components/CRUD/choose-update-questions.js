@@ -33,7 +33,7 @@ const ChooseUpdateQuestions = () => {
         console.log("quesitonID is ", questionID.toString())
 
         navigate({
-            pathname: '/update-question',
+            pathname: '/update-questions/qn',
             search: createSearchParams({
                 id: questionID.toString()
             }).toString()
@@ -53,7 +53,7 @@ const ChooseUpdateQuestions = () => {
                         (questionData.length > 0) ? questionData.map(question => {
                             // console.log(question.id)
                             return (
-                                <div class="question-container" onClick={() => handleQuestionUpdate(question.id)}>
+                                <div class="question-container" id={question.id} onClick={() => handleQuestionUpdate(question.id)}>
                                     <div class="heading"> 
                                         <h3 style={{marginRight:'10px'}}>World:  {question.attributes.name.split(",")[0] === "4" ? "Custom" : question.attributes.name.split(",")[0]} </h3> 
                                         <h3 style={{marginRight:'10px'}}>Level: {question.attributes.name.split(",")[1]} </h3>
