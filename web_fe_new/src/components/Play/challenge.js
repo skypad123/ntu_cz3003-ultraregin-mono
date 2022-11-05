@@ -5,7 +5,7 @@ import axios from 'axios';
 const Challenge = () => {
     const navigate = useNavigate();
     const [studentNames, setStudentNames] = useState([]);
-    const [selectedStudentID, setSelectedStudentID] = useState('0');
+    const [selectedStudent, setSelectedStudent] = useState('0');
     const [world, setWorld] = useState();
     const [level, setLevel] = useState();
 
@@ -14,7 +14,7 @@ const Challenge = () => {
     }, );
 
     const getStudentNames = () => {
-        axios.get('https://ultraregin-be-vs7vz.ondigitalocean.app/api/users', {
+        axios.get('https://ultraregin-be-vs7vz.ondigitalocean.app/api/users?populate=role', {
             headers:{
                 // contentType: 'application/json',
                 Authorization:
@@ -26,6 +26,25 @@ const Challenge = () => {
         const allStudentNames = response.data;
         setStudentNames(allStudentNames);
         })
+    }
+
+    const handleCancel = async e => {
+        navigate({
+            pathname: '/summary-report'
+        })
+    }
+
+    const handleSubmit = async e => {
+        if (!world || !level || !selectedStudent){
+            window.alert("Enter all fields!")
+        }
+        else {
+            window.alert("Challenge of World " + world + ", Level " + level + " sent to " + selectedStudent)
+            // navigate({
+            //     pathname: '/challenge'
+            // })
+            
+        }
     }
 
     
@@ -65,12 +84,14 @@ return (
                 </div>
 
                 <div style={{marginTop: '20px', display:'flex', justifyContent:"center", width: '90%'}}>
-                    <select id="student-select" class="dropdown-box" onChange={(e) => {setSelectedStudentID(e.target.value) }}> 
+                    <select id="student-select" class="dropdown-box" onChange={(e) => {setSelectedStudent(e.target.value) }}> 
                         <option disabled selected> Select student </option>
                         {
                             studentNames.map(student => {
                                 return (
-                                    <option value={student.username}> {student.username} </option>
+                                    (student.role.name == "Students" ?
+                                        <option value={student.username}> {student.username} </option> : null
+                                    )
                                 )
                             })
                         }
@@ -78,8 +99,8 @@ return (
                 </div>
 
                 <div class="bottom-btns ml-3">
-                        <input type="button" class="btn btn-danger float-end" id="btn-back" value="Cancel" />
-                        <input type="button" class="btn btn-primary" id="btn-ok-create" value="Done"  /> 
+                        <input type="button" class="btn btn-danger float-end" id="btn-back" value="Cancel" onClick= {handleCancel}/>
+                        <input type="button" class="btn btn-primary" id="btn-ok-create" value="Done" onClick={handleSubmit} /> 
                 </div>
             </div>
         </div>

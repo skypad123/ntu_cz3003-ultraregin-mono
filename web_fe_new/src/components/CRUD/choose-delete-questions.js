@@ -63,7 +63,9 @@ const ChooseDeleteQuestions = () => {
             console.log("response", response)
             if (response.status === 200){
                 window.alert("Question deleted")
-                window.location.reload(true);
+                navigate({
+                    pathname: '/choose-delete-questions'
+                })
             }
             }
         catch (e) {
@@ -94,7 +96,7 @@ const ChooseDeleteQuestions = () => {
                         (questionData.length > 0) ? questionData.map(question => {
                             // console.log(question.id)
                             return (
-                                <div class="question-container" onClick={() => handleQuestionDelete(question.id, question.attributes.description)}>
+                                <div class="question-container" id={question.id} onClick={() => handleQuestionDelete(question.id, question.attributes.description)}>
                                     <div class="heading"> 
                                         <h3 style={{marginRight:'10px'}}>World:  {question.attributes.name.split(",")[0] === "4" ? "Custom" : question.attributes.name.split(",")[0]} </h3> 
                                         <h3 style={{marginRight:'10px'}}>Level: {question.attributes.name.split(",")[1]} </h3>

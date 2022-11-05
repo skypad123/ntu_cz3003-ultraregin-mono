@@ -15,6 +15,7 @@ import ChooseDeleteQuestions from './components/CRUD/choose-delete-questions';
 import UpdateQuestion from './components/CRUD/update-question';
 import Challenge from './components/Play/challenge'
 import axios from 'axios';
+import { FaWindows } from 'react-icons/fa';
 
 
 function useQuery(){
@@ -58,8 +59,12 @@ function useLoginInfo(){
            const userData  = await getUserRoleData(jwtData.data.jwt);
            sessionStorage.setItem("jwt", userData.jwt);
            setRole(userData.data.role.type);
-           nav("/"); 
+           console.log(userData.data.role.type);
+        //    nav('/')
+           (userData.data.role.type === "students") ? nav("/play") : nav("/summary-report");
+            
         }catch(e){
+            window.alert("Wrong input!");
             console.log(e);
         }  
     }
@@ -148,9 +153,9 @@ function App() {
                 <Route path='/play' element={<Play />} />
                 <Route path='/create' element={<CreateQuestions/>} />
                 <Route path='/read' element={<ReadQuestions/>} />
-                <Route path='/choose-update-questions' element={<ChooseUpdateQuestions/>} />
-                <Route path='/update-question' element={<UpdateQuestion/>} />
-                <Route path='/choose-delete-questions' element={<ChooseDeleteQuestions/>} />
+                <Route path='/update-questions' element={<ChooseUpdateQuestions/>} />
+                <Route path='/update-questions/qn' element={<UpdateQuestion/>} />
+                {/* <Route path='/choose-delete-questions' element={<ChooseDeleteQuestions/>} /> */}
                 <Route path='/challenge' element={<Challenge/>} />
             </Routes>
             </>
@@ -164,11 +169,11 @@ function App() {
             <ProfessorSideBar />
             <Routes>
                 <Route path='/summary-report' element={<SummaryReport />} />
-                <Route path='/summary-report-student' element={<SummaryReportStudent />} />
+                <Route path='/summary-report/student' element={<SummaryReportStudent />} />
                 <Route path='/create' element={<CreateQuestions/>} />
                 <Route path='/read' element={<ReadQuestions/>} />
-                <Route path='/choose-update-questions' element={<ChooseUpdateQuestions/>} />
-                <Route path='/update-question' element={<UpdateQuestion/>} />
+                <Route path='/update-questions' element={<ChooseUpdateQuestions/>} />
+                <Route path='/update-questions/qn' element={<UpdateQuestion/>} />
                 <Route path='/choose-delete-questions' element={<ChooseDeleteQuestions/>} />
             </Routes>
             </>
