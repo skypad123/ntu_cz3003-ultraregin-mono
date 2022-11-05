@@ -1,5 +1,5 @@
 {
-  "/world-question-compositions": {
+  "/world-level-compositions": {
     "get": {
       "responses": {
         "200": {
@@ -7,7 +7,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WorldQuestionCompositionListResponse"
+                "$ref": "#/components/schemas/WorldLevelCompositionListResponse"
               }
             }
           }
@@ -64,7 +64,7 @@
         }
       },
       "tags": [
-        "World-question-composition"
+        "World-level-composition"
       ],
       "parameters": [
         {
@@ -148,7 +148,7 @@
           }
         }
       ],
-      "operationId": "get/world-question-compositions"
+      "operationId": "get/world-level-compositions"
     },
     "post": {
       "responses": {
@@ -157,7 +157,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WorldQuestionCompositionResponse"
+                "$ref": "#/components/schemas/WorldLevelCompositionResponse"
               }
             }
           }
@@ -214,23 +214,23 @@
         }
       },
       "tags": [
-        "World-question-composition"
+        "World-level-composition"
       ],
       "parameters": [],
-      "operationId": "post/world-question-compositions",
+      "operationId": "post/world-level-compositions",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/WorldQuestionCompositionRequest"
+              "$ref": "#/components/schemas/WorldLevelCompositionRequest"
             }
           }
         }
       }
     }
   },
-  "/world-question-compositions/{id}": {
+  "/world-level-compositions/{id}": {
     "get": {
       "responses": {
         "200": {
@@ -238,7 +238,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WorldQuestionCompositionResponse"
+                "$ref": "#/components/schemas/WorldLevelCompositionResponse"
               }
             }
           }
@@ -295,7 +295,7 @@
         }
       },
       "tags": [
-        "World-question-composition"
+        "World-level-composition"
       ],
       "parameters": [
         {
@@ -309,7 +309,7 @@
           }
         }
       ],
-      "operationId": "get/world-question-compositions/{id}"
+      "operationId": "get/world-level-compositions/{id}"
     },
     "put": {
       "responses": {
@@ -318,7 +318,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WorldQuestionCompositionResponse"
+                "$ref": "#/components/schemas/WorldLevelCompositionResponse"
               }
             }
           }
@@ -375,7 +375,7 @@
         }
       },
       "tags": [
-        "World-question-composition"
+        "World-level-composition"
       ],
       "parameters": [
         {
@@ -389,13 +389,13 @@
           }
         }
       ],
-      "operationId": "put/world-question-compositions/{id}",
+      "operationId": "put/world-level-compositions/{id}",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/WorldQuestionCompositionRequest"
+              "$ref": "#/components/schemas/WorldLevelCompositionRequest"
             }
           }
         }
@@ -466,7 +466,7 @@
         }
       },
       "tags": [
-        "World-question-composition"
+        "World-level-composition"
       ],
       "parameters": [
         {
@@ -480,7 +480,7 @@
           }
         }
       ],
-      "operationId": "delete/world-question-compositions/{id}"
+      "operationId": "delete/world-level-compositions/{id}"
     }
   }
 }
