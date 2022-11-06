@@ -2,14 +2,14 @@
 // RS_InputDialog.js
 // ---------------------------------------------------------------
 // The MIT License
-// Copyright (c) 2016 biud436
+// Copyright (c) 2016-2022 biud436, zenteh24
 // ---------------------------------------------------------------
 // Free for commercial and non commercial use.
 //================================================================
 /*:
  * @target MZ
- * @plugindesc This plugin allows you to display Text Edit Box on the screen. <RS_InputDialog>
- * @author biud436
+ * @plugindesc This plugin allows you to display Text Edit Box on the screen. <RS_InputDialog>, modified by Zenteh24 to allow the customizability of password fields
+ * @author biud436, modified by Zenteh24
  * @url https://biud436.tistory.com
  *
  * @param textBox Width
@@ -39,6 +39,10 @@
  * @param Text Hint
  * @desc Sets the string that is the top of the text box.
  * @default Please enter the value...
+ * 
+ * @param Input Type
+ * @desc Sets the input type.
+ * @default text
  *
  * @param direction
  * @type select
@@ -185,6 +189,15 @@
  * @desc Specify the maxLength value.
  * @default 10
  *
+ * @command inputType
+ * @text Set input type
+ * @desc Changes the input type of Input Dialog for representing the description.
+ *
+ * @arg inputType
+ * @type string
+ * @desc text|password
+ * @default text
+ * 
  * @command pos
  * @desc This plugin commands decide how to set the position of the input dialog.
  *
@@ -253,6 +266,10 @@ RS.Utils = RS.Utils || {};
         parameters["Max Length"] || "6"
     );
 
+    RS.InputDialog.Params.inputType = String(
+        parameters["Input Type"] || "text"
+    );
+
     RS.InputDialog.Params.szTextBoxId = "md_textBox";
     RS.InputDialog.Params.szFieldId = "md_inputField";
 
@@ -298,8 +315,8 @@ RS.Utils = RS.Utils || {};
             "use strict";
 
             let query, textBox, OkButton, CancelButton;
-
-            query = `div#${RS.InputDialog.Params.szFieldId} table.inputDialogContainer tr td input[type=text]`;
+            console.log("set type", RS.InputDialog.Params.inputType);
+            query = `div#${RS.InputDialog.Params.szFieldId} table.inputDialogContainer tr td input[type=${RS.InputDialog.Params.inputType}]`;
             textBox = document.querySelector(query);
 
             query = `div#${RS.InputDialog.Params.szFieldId} table.inputDialogContainer tr td input[type=button][id=inputDialog-OkBtn]`;
@@ -499,7 +516,7 @@ RS.Utils = RS.Utils || {};
                                     children: [
                                         {
                                             tagName: "input",
-                                            type: "text",
+                                            type: RS.InputDialog.Params.inputType,
                                             id: "RS.InputDialog.Params.szTextBoxId",
                                             class: "inputDialog",
                                             placeholder:
@@ -699,7 +716,7 @@ RS.Utils = RS.Utils || {};
         <table class="inputDialogContainer">
               <tr class="row">
                   <td class="col">
-                      <input class="inputDialog" type="text" id"=${id} placeholder="${RS.InputDialog.Params.localText}">
+                      <input class="inputDialog" type=${RS.InputDialog.Params.inputType} id"=${id} placeholder="${RS.InputDialog.Params.localText}">
                   </td>
               </tr>
               <tr class="row" valign="bottom">
@@ -727,7 +744,7 @@ RS.Utils = RS.Utils || {};
 
         getTextBoxId() {
             "use strict";
-            const query = `div#${RS.InputDialog.Params.szFieldId} table.inputDialogContainer tr td input[type=text]`;
+            const query = `div#${RS.InputDialog.Params.szFieldId} table.inputDialogContainer tr td input[type=${RS.InputDialog.Params.inputType}]`;
             return document.querySelector(query);
         }
 
@@ -747,7 +764,10 @@ RS.Utils = RS.Utils || {};
         addAllEventListener() {
             this._textBox = this.getTextBoxId();
             this._textBox.maxLength = RS.InputDialog.Params.nMaxLength;
+            
+            this._textBox.type = RS.InputDialog.Params.inputType;
             this._textBox.max = RS.InputDialog.Params.nMaxLength;
+            console.log(this._textBox);
 
             this._textBox.addEventListener(
                 "keydown",
@@ -1310,6 +1330,11 @@ RS.Utils = RS.Utils || {};
 
     PluginManager.registerCommand(pluginName, "maxLength", (args) => {
         RS.InputDialog.Params.nMaxLength = Number(args.value || 255);
+        RS.InputDialog.setRect();
+    });
+
+    PluginManager.registerCommand(pluginName, "inputType", (args) => {
+        RS.InputDialog.Params.inputType = args.inputType;
         RS.InputDialog.setRect();
     });
 
