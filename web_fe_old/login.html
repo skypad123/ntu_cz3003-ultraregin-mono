@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Login</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    <script src="https://kit.fontawesome.com/0ce6c392ca.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/style.css">
+  </head>
+
+  <body>
+    <div id="root">
+
+    </div>
+    <!-- our script must have type="text/babel" for Babel to work -->
+    <script type="text/babel">
+      function App () {
+        return (
+            <section>
+                <div class="container-login">
+                    <div class="card mt-3 border-0">
+                        <img src="img/ultrareign-logo.jpg" width="300" height="300" class="img-center"></img>
+                    </div>    
+
+                    <div class="user-details-container">
+                          <div class="user-input">
+                              <span class="input-group-text"> <i class="fas fa-user"></i> </span>
+                              <input name="username" class="form-control" placeholder="User name" type="text" required></input>
+                          </div> 
+                      
+                          <div class="user-input">
+                              <span class="input-group-text"> <i class="fas fa-lock"></i> </span>
+                              <input class="form-control" name="password" placeholder="Password" type="password" required></input>
+                          </div> 
+
+                          <div class="d-grid">
+                            <input type="button" class="btn" id="btn-login" value=" LOGIN  "></input>
+                          </div>
+                           
+
+                    </div>
+                </div>
+            </section>
+        );
+      }
+      ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+  </body>
+
+</html>

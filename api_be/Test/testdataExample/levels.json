@@ -1,0 +1,25 @@
+{
+    "levels":[
+        {
+            "name" : "(world 1  - level 1)", 
+            "description" : "Mathematic Level", 
+            "question_count" : 3, 
+            "level_type": "Normal",
+            "creator": "professor1"       
+        },
+        {
+            "name" : "(world 1  - level 2)", 
+            "description" : "Mathematic Level", 
+            "question_count": 3,
+            "level_type": "Normal",
+            "creator": "professor1"       
+        },
+        {
+            "name" : "(world 1  - level 3)", 
+            "description" : "Mathematic Level",
+            "question_count": 3,
+            "level_type": "Normal",
+            "creator": "professor1"       
+        }
+    ]
+}

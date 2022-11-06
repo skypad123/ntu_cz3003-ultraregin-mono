@@ -1,0 +1,237 @@
+/* The side navigation menu */
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #d9d9d9;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+
+
+/* Active/current link */
+.sidebar a.active {
+  background-color: #555;
+  color: white;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.container {
+  margin-left: 200px;
+  height:100px;
+  padding: 1px 16px;
+}
+
+div.container-login {
+  /* margin-left: 200px; */
+  height:100px;
+  padding: 1px 16px;
+  
+}
+
+.user-details-container{
+  margin-top: 30px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+.question-container {
+  /* background-color: beige; */
+  border-bottom: 2px solid lightgray;
+}
+
+
+.img-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-login{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-label{
+  display:block;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+.user-input{
+  height: 50px;
+}
+
+.form-control {
+  height: 30px;
+  width: 700px;
+  margin: 5px;
+  display: block;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #285474;
+  border-color: #285474;
+  color: white;
+}
+
+.btn {
+  background-color: #285474;
+  border:0px;
+  color: white;
+  width:200px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+
+.btn:hover{
+  opacity:90%;
+  color:white;
+}
+
+.btn-secondary {
+  background-color: #285474;
+  border-color: #285474;
+  color: white;
+  width:200px;
+}
+
+.btn-secondary:hover {
+  opacity: 90%;
+}
+
+.bottom-btns{
+  display:flex;
+  justify-content: space-between;
+  padding: 15px;
+  width: 80%;
+}
+
+.input-group-btn{
+  /* height:40px; */
+  /* font-size:10px;
+  line-height:1.3333333;
+  border-radius:6px; */
+  display:flex;
+  justify-content: center;
+  /* background-color: beige; */
+}
+
+.btn-world {
+  background-color: #285474;
+  border-color: #285474;
+  color: white;
+  width:200px;
+  height: 30px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 5px;
+}
+
+.input-group-btn label {
+  background-color: #285474;
+  border-color: #285474;
+  color: white;
+  width:200px;
+  height: 30px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 5px;
+}
+
+.input-group-btn input[type="radio"]:checked+label {
+  box-shadow: rgba(0, 0, 0, 0.8) 0px 8px 8px;
+}
+
+.input-group-btn input
+{
+  visibility: hidden;
+}
+
+/* .world-level-play{
+  background-color: beige;
+  display: flex;
+  justify-content: center;
+} */
+
+.student-details{
+  border-radius: 15px; 
+  border-style: solid; 
+  border-color: #285474;
+  margin-top: 20px;
+  display: flex;
+  text-align: center;
+}
+
+.graph {
+  position:relative;
+  max-width: 1000px;
+  height: 400px;
+  background: #ddd;   
+}
+
+.bar {
+  height: 20%;
+  background: beige;
+  z-index:25;
+  border-top: 5px solid #222;
+  border-left: 5px solid #222;
+  border-right: 5px solid #222;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+
+.confirm-delete-btns {
+  padding: 16px;
+  text-align:center;
+}
+
+.dropdown-box {
+  width: 50%;
+  height: 30px;
+  border-radius: 10px;
+  border: 2px solid #285474;
+  font-size: 18px;
+}
+
+.heading {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: -20px;
+}
+
+table, th, tr, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  width: 30%;
+}

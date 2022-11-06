@@ -1,0 +1,67 @@
+{
+    "questions":[
+        {
+            "name" : "Addition Question (world 1  - level 1 - question 1)", 
+            "description" : "What is 2+1 ?", 
+            "fake_answers" : "2,3,4,5", 
+            "actual_answer": "B",
+            "creator": "professor1"       
+        },
+        {
+            "name" : "Square Root Question (world 1  - level 1 - question 2)", 
+            "description" : "What is the square root of 16 ?", 
+            "fake_answers" : "2,3,4,5", 
+            "actual_answer": "C",
+            "creator": "professor1"       
+        },
+        {
+            "name" : "Prime Number Question (world 1  - level 1 - question 3)", 
+            "description" : "What is Not a prime number ?", 
+            "fake_answers" : "2,1,3,13", 
+            "actual_answer": "B",
+            "creator": "professor1"       
+        },
+        {
+            "name" : "Division Question (world 1  - level 2 - question 1)", 
+            "description" : "What is 81/9 ?", 
+            "fake_answers" : "42,36,9,72", 
+            "actual_answer": "C",
+            "creator": "professor1"       
+        },
+        {
+            "name" : "Multiplication Question (world 1  - level 2 - question 2)", 
+            "description" : "What is 9*2 ?", 
+            "fake_answers" : "2,9,27,18", 
+            "actual_answer": "D",
+            "creator": "professor1"       
+        },
+        {
+            "name" : "Square Root Question (world 1  - level 2 - question 3)", 
+            "description" : "What is square root of 4 ?", 
+            "fake_answers" : "2,3,4,5", 
+            "actual_answer": "A",
+            "creator": "professor1"       
+        },
+        {
+            "name" : "Addition Question (world 1  - level 3 - question 1)", 
+            "description" : "What is 2+2 ?", 
+            "fake_answers" : "4,6,7,8", 
+            "actual_answer": "A",
+            "creator": "professor1"       
+        },
+        {
+            "name" : "Square Root Question (world 1  - level 3 - question 2)", 
+            "description" : "What is the square root of 25?", 
+            "fake_answers" : "2,3,4,5", 
+            "actual_answer": "D",
+            "creator": "professor1"       
+        },
+        {
+            "name" : "Compound Question (world 1  - level 3 - question 3)", 
+            "description" : "What is 36 + 9/3 ?", 
+            "fake_answers" : "36,9,39,27", 
+            "actual_answer": "C",
+            "creator": "professor1"       
+        }
+    ]
+}

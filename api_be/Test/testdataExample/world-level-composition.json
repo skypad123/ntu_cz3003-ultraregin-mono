@@ -1,0 +1,22 @@
+{
+    "world-level-composition":[
+        {
+            "level_position" : 1, 
+            "world" : "CZ1060 Mathematic For Kids (world 1)",
+            "level" : "(world 1  - level 1)",
+            "creator": "professor1"       
+        },
+        {
+            "level_position" : 2, 
+            "world" : "CZ1060 Mathematic For Kids (world 1)",
+            "level" : "(world 1  - level 2)",
+            "creator": "professor1"       
+        },
+        {
+            "level_position" : 3, 
+            "world" : "CZ1060 Mathematic For Kids (world 1)",
+            "level" : "(world 1  - level 3)",
+            "creator": "professor1"       
+        }
+    ]
+}

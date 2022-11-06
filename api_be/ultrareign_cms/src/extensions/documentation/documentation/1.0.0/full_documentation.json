@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2022-09-12T06:33:55.022Z"
+    "x-generation-date": "2022-11-05T07:38:40.313Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -22615,7 +22615,7 @@
           }
         }
       },
-      "WorldQuestionCompositionRequest": {
+      "WorldLevelCompositionRequest": {
         "type": "object",
         "required": [
           "data"
@@ -22654,7 +22654,7 @@
           }
         }
       },
-      "WorldQuestionCompositionListResponseDataItem": {
+      "WorldLevelCompositionListResponseDataItem": {
         "type": "object",
         "properties": {
           "id": {
@@ -23341,10 +23341,6 @@
                 "type": "string",
                 "format": "date-time"
               },
-              "publishedAt": {
-                "type": "string",
-                "format": "date-time"
-              },
               "createdBy": {
                 "type": "object",
                 "properties": {
@@ -23383,7 +23379,7 @@
           }
         }
       },
-      "WorldQuestionCompositionListResponseDataItemLocalized": {
+      "WorldLevelCompositionListResponseDataItemLocalized": {
         "type": "object",
         "properties": {
           "id": {
@@ -24070,10 +24066,6 @@
                 "type": "string",
                 "format": "date-time"
               },
-              "publishedAt": {
-                "type": "string",
-                "format": "date-time"
-              },
               "createdBy": {
                 "type": "object",
                 "properties": {
@@ -24112,12 +24104,12 @@
           }
         }
       },
-      "WorldQuestionCompositionListResponse": {
+      "WorldLevelCompositionListResponse": {
         "properties": {
           "data": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/WorldQuestionCompositionListResponseDataItem"
+              "$ref": "#/components/schemas/WorldLevelCompositionListResponseDataItem"
             }
           },
           "meta": {
@@ -24145,7 +24137,7 @@
           }
         }
       },
-      "WorldQuestionCompositionResponseDataObject": {
+      "WorldLevelCompositionResponseDataObject": {
         "type": "object",
         "properties": {
           "id": {
@@ -24832,10 +24824,6 @@
                 "type": "string",
                 "format": "date-time"
               },
-              "publishedAt": {
-                "type": "string",
-                "format": "date-time"
-              },
               "createdBy": {
                 "type": "object",
                 "properties": {
@@ -24874,7 +24862,7 @@
           }
         }
       },
-      "WorldQuestionCompositionResponseDataObjectLocalized": {
+      "WorldLevelCompositionResponseDataObjectLocalized": {
         "type": "object",
         "properties": {
           "id": {
@@ -25561,10 +25549,6 @@
                 "type": "string",
                 "format": "date-time"
               },
-              "publishedAt": {
-                "type": "string",
-                "format": "date-time"
-              },
               "createdBy": {
                 "type": "object",
                 "properties": {
@@ -25603,10 +25587,10 @@
           }
         }
       },
-      "WorldQuestionCompositionResponse": {
+      "WorldLevelCompositionResponse": {
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/WorldQuestionCompositionResponseDataObject"
+            "$ref": "#/components/schemas/WorldLevelCompositionResponseDataObject"
           },
           "meta": {
             "type": "object"
@@ -41480,7 +41464,7 @@
         "operationId": "delete/worlds/{id}"
       }
     },
-    "/world-question-compositions": {
+    "/world-level-compositions": {
       "get": {
         "responses": {
           "200": {
@@ -41488,7 +41472,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/WorldQuestionCompositionListResponse"
+                  "$ref": "#/components/schemas/WorldLevelCompositionListResponse"
                 }
               }
             }
@@ -41545,7 +41529,7 @@
           }
         },
         "tags": [
-          "World-question-composition"
+          "World-level-composition"
         ],
         "parameters": [
           {
@@ -41629,7 +41613,7 @@
             }
           }
         ],
-        "operationId": "get/world-question-compositions"
+        "operationId": "get/world-level-compositions"
       },
       "post": {
         "responses": {
@@ -41638,7 +41622,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/WorldQuestionCompositionResponse"
+                  "$ref": "#/components/schemas/WorldLevelCompositionResponse"
                 }
               }
             }
@@ -41695,23 +41679,23 @@
           }
         },
         "tags": [
-          "World-question-composition"
+          "World-level-composition"
         ],
         "parameters": [],
-        "operationId": "post/world-question-compositions",
+        "operationId": "post/world-level-compositions",
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WorldQuestionCompositionRequest"
+                "$ref": "#/components/schemas/WorldLevelCompositionRequest"
               }
             }
           }
         }
       }
     },
-    "/world-question-compositions/{id}": {
+    "/world-level-compositions/{id}": {
       "get": {
         "responses": {
           "200": {
@@ -41719,7 +41703,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/WorldQuestionCompositionResponse"
+                  "$ref": "#/components/schemas/WorldLevelCompositionResponse"
                 }
               }
             }
@@ -41776,7 +41760,7 @@
           }
         },
         "tags": [
-          "World-question-composition"
+          "World-level-composition"
         ],
         "parameters": [
           {
@@ -41790,7 +41774,7 @@
             }
           }
         ],
-        "operationId": "get/world-question-compositions/{id}"
+        "operationId": "get/world-level-compositions/{id}"
       },
       "put": {
         "responses": {
@@ -41799,7 +41783,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/WorldQuestionCompositionResponse"
+                  "$ref": "#/components/schemas/WorldLevelCompositionResponse"
                 }
               }
             }
@@ -41856,7 +41840,7 @@
           }
         },
         "tags": [
-          "World-question-composition"
+          "World-level-composition"
         ],
         "parameters": [
           {
@@ -41870,13 +41854,13 @@
             }
           }
         ],
-        "operationId": "put/world-question-compositions/{id}",
+        "operationId": "put/world-level-compositions/{id}",
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/WorldQuestionCompositionRequest"
+                "$ref": "#/components/schemas/WorldLevelCompositionRequest"
               }
             }
           }
@@ -41947,7 +41931,7 @@
           }
         },
         "tags": [
-          "World-question-composition"
+          "World-level-composition"
         ],
         "parameters": [
           {
@@ -41961,7 +41945,7 @@
             }
           }
         ],
-        "operationId": "delete/world-question-compositions/{id}"
+        "operationId": "delete/world-level-compositions/{id}"
       }
     },
     "/upload/files": {
