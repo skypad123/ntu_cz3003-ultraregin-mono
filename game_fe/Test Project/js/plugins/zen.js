@@ -388,7 +388,7 @@
     levelList = []
     temp = []
     tempQuestionList = []
-    worldquestioncomposition = await axios.get('https://ultraregin-be-vs7vz.ondigitalocean.app/api/world-question-compositions?populate=*', {
+    worldquestioncomposition = await axios.get('https://ultraregin-be-vs7vz.ondigitalocean.app/api/world-level-compositions?populate=*', {
       headers: {
         Authorization:
           'Bearer '+ bearer_token,
@@ -522,7 +522,7 @@
 
     getWorldQuestionComposition = async function(){   
       console.log("getWorld has been called");
-      await axios.get('https://ultraregin-be-vs7vz.ondigitalocean.app/api/world-question-compositions', {
+      await axios.get('https://ultraregin-be-vs7vz.ondigitalocean.app/api/world-level-compositions', {
       headers: {
         Authorization:
           'Bearer '+ bearer_token,
