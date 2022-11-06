@@ -30,7 +30,7 @@ const Challenge = () => {
 
     const handleCancel = async e => {
         navigate({
-            pathname: '/summary-report'
+            pathname: '/leaderboard'
         })
     }
 
@@ -39,7 +39,7 @@ const Challenge = () => {
             window.alert("Enter all fields!")
         }
         else {
-            window.alert("Challenge of World " + world + ", Level " + level + " sent to " + selectedStudent)
+            window.alert("Challenge of Custom World " + ", Level " + level + " sent to " + selectedStudent)
             // navigate({
             //     pathname: '/challenge'
             // })
@@ -60,12 +60,6 @@ return (
                 <div class="world-btns">
                     <label for="inputName" class="form-label">World:</label>
                     <div class="input-group-btn">
-                        <input type="radio" id="world1" name="world" value="1" onChange = {e => setWorld(e.target.value)} />
-                        <label for="world1">1</label>
-                        <input type="radio" id="world2" name="world" value="2" onChange = {e => setWorld(e.target.value)} />
-                        <label for="world2">2</label>
-                        <input type="radio" id="world3" name="world" value="3" onChange = {e => setWorld(e.target.value)} />
-                        <label for="world3">3</label>
                         <input type="radio" id="worldCustom" name="world" value="4" onChange = {e => setWorld(e.target.value)} />
                         <label for="worldCustom">Custom</label>
                     </div>
