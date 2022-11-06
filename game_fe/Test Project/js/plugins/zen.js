@@ -91,21 +91,6 @@
       return isLoggedIn;
     }
 
-    testFunction = function(){
-        
-      axios.post('https://ultraregin-be-vs7vz.ondigitalocean.app/api/auth/local/', {
-      'identifier': 'zenzen123',
-      'password': 'zenzen123'
-    }).then(response => {
-      console.log('User profile', response.data.user);
-      console.log('User token', response.data.jwt);
-    });
-
-
-      console.log("This function has been called");
-
-  }
-
     loadWorldData = async function(){
       console.log("loadWorldData is called");
 
@@ -387,7 +372,7 @@
     levelList = []
     temp = []
     tempQuestionList = []
-    worldquestioncomposition = await axios.get('https://ultraregin-be-vs7vz.ondigitalocean.app/api/world-question-compositions?populate=*', {
+    worldquestioncomposition = await axios.get('https://ultraregin-be-vs7vz.ondigitalocean.app/api/world-level-compositions?populate=*', {
       headers: {
         Authorization:
           'Bearer '+ bearer_token,
@@ -521,7 +506,7 @@
 
     getWorldQuestionComposition = async function(){   
       console.log("getWorld has been called");
-      await axios.get('https://ultraregin-be-vs7vz.ondigitalocean.app/api/world-question-compositions', {
+      await axios.get('https://ultraregin-be-vs7vz.ondigitalocean.app/api/world-level-compositions', {
       headers: {
         Authorization:
           'Bearer '+ bearer_token,
