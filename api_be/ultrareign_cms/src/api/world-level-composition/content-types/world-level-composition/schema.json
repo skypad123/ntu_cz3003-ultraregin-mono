@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "world_level_compositions",
+  "info": {
+    "singularName": "world-level-composition",
+    "pluralName": "world-level-compositions",
+    "displayName": "World-Level-Composition",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "level": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::level.level"
+    },
+    "world": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::world.world"
+    },
+    "level_position": {
+      "type": "integer"
+    }
+  }
+}
