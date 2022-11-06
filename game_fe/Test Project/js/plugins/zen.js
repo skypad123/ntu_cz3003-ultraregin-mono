@@ -91,6 +91,21 @@
       return isLoggedIn;
     }
 
+    testFunction = function(){
+        
+        axios.post('https://ultraregin-be-vs7vz.ondigitalocean.app/api/auth/local/', {
+        'identifier': 'zenzen123',
+        'password': 'zenzen123'
+      }).then(response => {
+        console.log('User profile', response.data.user);
+        console.log('User token', response.data.jwt);
+      });
+
+
+        console.log("This function has been called");
+
+    }
+
 
     loadWorldData = async function(){
       console.log("loadWorldData is called");
