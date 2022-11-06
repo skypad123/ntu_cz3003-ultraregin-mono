@@ -9,7 +9,7 @@
 /*:
  * @target MZ
  * @plugindesc This plugin allows you to display Text Edit Box on the screen. <RS_InputDialog>
- * @author biud436
+ * @author biud436, modified by Zenteh24
  * @url https://biud436.tistory.com
  *
  * @param textBox Width
