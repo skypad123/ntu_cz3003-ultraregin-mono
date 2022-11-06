@@ -2,13 +2,13 @@
 // RS_InputDialog.js
 // ---------------------------------------------------------------
 // The MIT License
-// Copyright (c) 2016 biud436
+// Copyright (c) 2016-2022 biud436, zenteh24
 // ---------------------------------------------------------------
 // Free for commercial and non commercial use.
 //================================================================
 /*:
  * @target MZ
- * @plugindesc This plugin allows you to display Text Edit Box on the screen. <RS_InputDialog>
+ * @plugindesc This plugin allows you to display Text Edit Box on the screen. <RS_InputDialog>, modified by Zenteh24 to allow the customizability of password fields
  * @author biud436, modified by Zenteh24
  * @url https://biud436.tistory.com
  *
