@@ -7,17 +7,17 @@ const StudentSideBar = () => {
     return (
       <>
         <Nav>
-            <img src={sidebar_logo} style={{width: '180px'}} alt="sidebar-logo" />
-            <NavLink to="/play" activeStyle end>
-              Play
+            <a href="http://localhost:3000/"> <img src={sidebar_logo} style={{width: '180px'}} alt="sidebar-logo" /> </a>
+            <NavLink to="/leaderboard" activeStyle>
+              Leaderboard
             </NavLink>
-            <NavLink to="/create" activeStyle>
+            <NavLink to="/create-student" activeStyle>
               Create
             </NavLink>
-            <NavLink to="/read" activeStyle>
+            <NavLink to="/read-student" activeStyle>
               Read
             </NavLink>
-            <NavLink to="/update-questions" activeStyle>
+            <NavLink to="/update-questions-student" activeStyle>
               Update
             </NavLink>
             {/* <NavLink to="/choose-delete-questions" activeStyle>
@@ -38,7 +38,7 @@ const StudentSideBar = () => {
     return (
       <>
         <Nav>
-            <img src={sidebar_logo} style={{width: '180px'}} alt="sidebar-logo" />
+            <a href="http://localhost:3000/"> <img src={sidebar_logo} style={{width: '180px'}} alt="sidebar-logo" /> </a>
             <NavLink to="/summary-report" activeStyle>
               Summary Report
             </NavLink>

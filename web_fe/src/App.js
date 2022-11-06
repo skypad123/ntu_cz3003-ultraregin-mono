@@ -9,11 +9,16 @@ import SummaryReport from './components/SummaryReports/summary-report';
 import SummaryReportStudent from './components/SummaryReports/summary-report-student';
 import Play from './components/Play/play';
 import CreateQuestions from './components/CRUD/create-questions';
+import CreateQuestionsStudent from './components/CRUD/create-questions-students';
 import ReadQuestions from './components/CRUD/read-questions';
+import ReadQuestionsStudent from './components/CRUD/read-questions-students';
 import ChooseUpdateQuestions from './components/CRUD/choose-update-questions';
+import ChooseUpdateQuestionsStudent from './components/CRUD/choose-update-questions-students';
 import ChooseDeleteQuestions from './components/CRUD/choose-delete-questions';
 import UpdateQuestion from './components/CRUD/update-question';
+import UpdateQuestionStudent from './components/CRUD/update-question-student';
 import Challenge from './components/Play/challenge'
+import Leaderboard from './components/Play/leaderboard';
 import axios from 'axios';
 import { FaWindows } from 'react-icons/fa';
 
@@ -61,7 +66,7 @@ function useLoginInfo(){
            setRole(userData.data.role.type);
            console.log(userData.data.role.type);
         //    nav('/')
-           (userData.data.role.type === "students") ? nav("/play") : nav("/summary-report");
+           (userData.data.role.type === "students") ? nav("/leaderboard") : nav("/summary-report");
             
         }catch(e){
             window.alert("Wrong input!");
@@ -150,11 +155,11 @@ function App() {
             <>
             <StudentSideBar />
             <Routes>
-                <Route path='/play' element={<Play />} />
-                <Route path='/create' element={<CreateQuestions/>} />
-                <Route path='/read' element={<ReadQuestions/>} />
-                <Route path='/update-questions' element={<ChooseUpdateQuestions/>} />
-                <Route path='/update-questions/qn' element={<UpdateQuestion/>} />
+                <Route path='/leaderboard' element={<Leaderboard />} />
+                <Route path='/create-student' element={<CreateQuestionsStudent/>} />
+                <Route path='/read-student' element={<ReadQuestionsStudent/>} />
+                <Route path='/update-questions-student' element={<ChooseUpdateQuestionsStudent/>} />
+                <Route path='/update-questions-student/qn' element={<UpdateQuestionStudent/>} />
                 {/* <Route path='/choose-delete-questions' element={<ChooseDeleteQuestions/>} /> */}
                 <Route path='/challenge' element={<Challenge/>} />
             </Routes>
